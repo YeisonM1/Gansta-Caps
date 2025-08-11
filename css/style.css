@@ -1,0 +1,412 @@
+/* =========================================================
+   VARIABLES GLOBALES
+   ========================================================= */
+:root {
+  /* Fuentes */
+  --fuente-principal: "Montserrat", sans-serif;
+  --fuente-titulos: "Open Sans", sans-serif;
+
+  /* Colores de marca */
+  --color-gris-claro: #8C8C8B;
+  --casi-negro: #0D0B09;
+  --marron: #26211D;
+  --blanco: #fff;
+
+  /* Slider (hero) */
+  --hero-accent: #FACC15;             /* color activo bullets / focus */
+  --hero-radius: 1.25rem;             /* (si quieres) bordes del contenedor */
+  --hero-shadow: 0 15px 40px rgba(0,0,0,.25);
+
+  /* Anillo de las flechas (hover) */
+  --arrow-ring-color: #FACC15;        /* color del anillo que se llena */
+  --arrow-ring-track: rgba(255,255,255,.30); /* base del anillo */
+  --arrow-ring-thickness: 3px;        /* grosor del anillo */
+  --arrow-ring-outset: 3px;           /* cuánto “abraza” al botón */
+  --arrow-fill-duration: 500ms;       /* duración del llenado */
+}
+
+/* =========================================================
+   RESETEOS BÁSICOS
+   ========================================================= */
+html { box-sizing: border-box; font-size: 62.5%; }
+*, *::before, *::after { box-sizing: inherit; }
+
+body { font-family: var(--fuente-principal); font-size: 1.6rem; }
+h1, h2, h3 { font-family: var(--fuente-titulos); }
+a { text-decoration: none; }
+img { max-width: 100%; display: block; }
+
+.contenedor {
+  max-width: 120rem;
+  width: 95%;
+  margin: 0 auto;
+}
+
+/* =========================================================
+   CABECERA / NAVEGACIÓN
+   ========================================================= */
+.header{
+  background-color: var(--casi-negro);
+  padding: 1.5rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.4);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.logo{ width: 15rem; }
+
+.parte-logo{
+  color: var(--blanco);
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  position: relative;
+}
+
+.parte-logo__texto{
+  font-size: 2rem;
+  white-space: nowrap;
+  border-right: 2px solid var(--blanco);
+  opacity: 0;
+  position: absolute;              /* texto animado tipo “typing” */
+  left: calc(15rem + 1rem);
+}
+
+.navegacion-principal{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navegacion{
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.navegacion__enlace{
+  position: relative;
+  color: var(--blanco);
+  font-size: 1.8rem;
+  display: inline-block;
+  padding: .35rem .9rem;
+  border-radius: .6rem;
+  transition: box-shadow .25s ease, background .25s ease, transform .2s ease;
+  will-change: box-shadow, transform;
+}
+.navegacion__enlace:hover{
+  background: rgba(255,255,255,.09);
+  box-shadow:
+    0 6px 16px rgba(0,0,0,.35),
+    inset 0 0 0 1px rgba(255,255,255,.08);
+  transform: translateY(-1px);
+}
+.navegacion__enlace:focus-visible{
+  outline: none;
+  box-shadow: 0 0 0 2px #2563EB, 0 6px 16px rgba(0,0,0,.35);
+}
+.navegacion__enlace::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  bottom:-6px;
+  width:80%;
+  height:2px;
+  background:#bfbfbf;
+  border-radius:2px;
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: 50% 50%;
+  transition: transform .28s ease;
+}
+.navegacion__enlace:hover::after{ transform: translateX(-50%) scaleX(1); }
+
+/* Iconos sociales de la cabecera */
+.iconos{ display: flex; gap: 2rem; }
+
+.icono{
+  position: relative;
+  width: 4.5rem; height: 4.5rem;
+  border-radius: 50%;
+  background: #0B0B0C;
+  display: grid; place-items: center;
+  transition: background .25s ease, transform .18s ease;
+  padding: 0;
+}
+.icono svg{ stroke:#fff; fill:none; }
+
+.icono.instagram:hover{
+  background: conic-gradient(#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5,#feda75);
+  transform: scale(1.08);
+}
+.icono.whatsapp:hover{
+  background:#25D366;
+  transform: scale(1.08);
+}
+.icono:hover svg{ stroke:#000 !important; fill:none !important; }
+
+/* =========================================================
+   BANNER (si lo sigues usando en otras secciones)
+   ========================================================= */
+.banner{
+  background-image: url(../img/banner.jpg);
+  height: 45rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  position: relative;
+}
+.contenido-banner{
+  position: absolute; inset: 0;
+  background-color: rgba(0,0,0,.6);
+}
+.informacion{
+  display: flex; flex-direction: column; align-items: center;
+  margin-top: 8rem; color: var(--blanco);
+}
+.informacion__titulo{ font-size: 4rem; font-weight: 700; margin: 0; }
+.informacion__descp{ font-size: 2rem; margin: 2rem 0 3rem 0; }
+.informacion__btn{
+  color: var(--casi-negro);
+  background-color: var(--color-gris-claro);
+  padding: 1rem 2rem;
+  font-size: 2rem; font-weight: 700; text-transform: uppercase;
+  border-radius: 1.2rem;
+  transition: background .3s ease, transform .2s ease;
+}
+.informacion__btn:hover{ background:#747473; transform: scale(1.05); }
+
+/* =========================================================
+   SECCIÓN: ¿POR QUÉ ELEGIRNOS?
+   ========================================================= */
+.por-que-elerginos__titulo{
+  text-align: center; margin-top: 4rem; font-size: 3.2rem;
+}
+.por-que-contenedor{
+  display: grid; grid-template-columns: repeat(3,1fr);
+  gap: 2rem; margin-top: 5rem;
+}
+.por-que{
+  border: 1px solid #e1e1e1;
+  padding: 1rem; text-align: center;
+}
+
+/* =========================================================
+   HERO SLIDER (CARRUSEL)
+   Cambios aplicados:
+   - Más alto: clamp(52rem, 85vh, 60rem)
+   - Contenido en columna, centrado, con ancho de lectura cómodo
+   - Overlay más legible
+   - Animación de entrada suave por slide
+   - Flechas con “anillo” que se llena en hover + efecto pop
+   ========================================================= */
+
+/* Contenedor principal del slider */
+.hero-slider{
+  position: relative;
+  height: clamp(52rem, 85vh, 60rem);  /* ALTURA MÁS GRANDE */
+  overflow: hidden;
+  background: #0b0b0b;
+  box-shadow: var(--hero-shadow);
+  isolation: isolate;                 /* el overlay no “sangra” fuera */
+  /* Si quieres bordes redondeados, descomenta: */
+  /* border-radius: var(--hero-radius); */
+}
+
+/* Pista horizontal que se desplaza con translateX */
+.hero-track{
+  display: flex;
+  width: 100%; height: 100%;
+  transition: transform .6s ease;
+  will-change: transform;
+}
+
+/* Cada slide ocupa el 100% del ancho visible */
+.hero-slide{
+  position: relative;
+  flex: 0 0 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Imagen de fondo del slide */
+.hero-media{
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transform: scale(1.03);             /* micro-zoom */
+  transition: transform 2.5s ease;
+}
+.hero-slide.is-active .hero-media{ transform: scale(1); }
+
+/* Overlay en gradiente para mejorar la legibilidad del texto */
+.hero-overlay{
+  position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,.18) 0%,
+    rgba(0,0,0,.50) 46%,
+    rgba(0,0,0,.78) 100%
+  );
+}
+
+/* Bloque de contenido del slide (TEXTO EN COLUMNA + CENTRADO) */
+.hero-content{
+  position: absolute; inset: 0; z-index: 2; color: #fff;
+  display: flex; flex-direction: column;    /* <— columna real */
+  align-items: center; justify-content: center;
+  text-align: center;
+  gap: 1.8rem;                               /* espaciado vertical */
+  max-width: min(92%, 64ch);                 /* ancho de lectura */
+  margin-inline: auto;
+  padding: clamp(1.5rem, 4vw, 3rem);
+  transform: translateY(4%);
+}
+.hero-content h2{
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  line-height: 1.1; margin: 0;
+  text-shadow: 0 2px 12px rgba(0,0,0,.55);
+}
+.hero-content p{
+  font-size: clamp(1.2rem, 2.2vw, 2rem);
+  margin: 0; opacity: .95;
+  text-shadow: 0 2px 10px rgba(0,0,0,.5);
+}
+.hero-cta{
+  display: inline-block;
+  padding: 1rem 2rem;                        /* CTA más “hero” */
+  border-radius: 999px;
+  border: 2px solid rgba(255,255,255,.85);
+  color: #fff; font-weight: 700; letter-spacing: .2px;
+  background: rgba(0,0,0,.25);
+  backdrop-filter: blur(2px);
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(0,0,0,.22);
+  transition: transform .2s ease, background .2s ease, border-color .2s ease;
+}
+.hero-cta:hover{ transform: translateY(-1px); background: rgba(0,0,0,.35); border-color:#fff; }
+.hero-cta:focus-visible{ outline: 3px solid var(--hero-accent); outline-offset: 2px; }
+
+/* ---------- Flechas: posición dentro del slider ---------- */
+.hero-slider > .hero-arrow{
+  position: absolute; top: 50%; transform: translateY(-50%);
+  border: 0; background: transparent; color:#fff;
+  z-index: 3; width: 46px; height: 46px;
+  display: grid; place-items: center;
+  /* para animaciones posteriores */
+  transform-origin: center; scale: 1;
+}
+
+/* Ubicación de cada flecha */
+.hero-slider > .hero-arrow.prev{ left: 1rem; }
+.hero-slider > .hero-arrow.next{ right: 1rem; }
+
+/* ---------- Anillo de carga al hover (conic-gradient) ---------- */
+@property --p { syntax: '<number>'; inherits: false; initial-value: 0; }
+
+.hero-arrow::before{
+  content:""; position:absolute;
+  inset: calc(-1 * var(--arrow-ring-outset));
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 var(--arrow-ring-thickness) var(--arrow-ring-track);
+  opacity: 0; transition: opacity .2s ease; pointer-events: none;
+}
+.hero-arrow::after{
+  content:""; position:absolute;
+  inset: calc(-1 * var(--arrow-ring-outset));
+  border-radius: 50%;
+  background: conic-gradient(var(--arrow-ring-color) calc(var(--p)*1turn), transparent 0);
+  /* “agujero” para dejar sólo el borde */
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - var(--arrow-ring-thickness)), #000 0);
+          mask: radial-gradient(farthest-side, transparent calc(100% - var(--arrow-ring-thickness)), #000 0);
+  opacity: 0; pointer-events: none;
+}
+.hero-arrow:hover::before,
+.hero-arrow:focus-visible::before{ opacity: 1; }
+.hero-arrow:hover::after,
+.hero-arrow:focus-visible::after{
+  opacity: 1; animation: hero-ring-fill var(--arrow-fill-duration) linear forwards;
+}
+@keyframes hero-ring-fill{ to { --p: 1; } }
+
+/* ---------- Efecto “inflado” (pop) sin romper el centrado ---------- */
+@keyframes arrow-pop-scale{
+  0%{   scale: 1; }
+  55%{  scale: 1.12; }
+  100%{ scale: 1.06; }
+}
+.hero-arrow:hover,
+.hero-arrow:focus-visible{ animation: arrow-pop-scale 220ms cubic-bezier(.25,1.35,.35,1) both; }
+.hero-arrow:active{ scale:.96; transition: scale .06s ease; }
+
+/* ---------- Bullets / puntos de navegación ---------- */
+.hero-dots{
+  position: absolute; left: 50%; bottom: clamp(.9rem, 2.5vw, 1.5rem);
+  translate: -50% 0;
+  display: flex; gap: .6rem; z-index: 3;
+}
+.hero-dots [role="tab"]{
+  width: 12px; height: 12px; border-radius: 50%;
+  border: 2px solid #fff; background: transparent;
+  opacity: .8; cursor: pointer;
+}
+.hero-dots [role="tab"][aria-selected="true"]{
+  background: var(--hero-accent); border-color: var(--hero-accent); opacity: 1;
+}
+.hero-dots [role="tab"]:focus-visible{ outline: 3px solid var(--hero-accent); outline-offset: 2px; }
+
+/* ---------- Animación de entrada del contenido por slide ---------- */
+.hero-slide .hero-content > *{
+  opacity: 0; transform: translateY(10px) scale(.98);
+}
+.hero-slide.is-active .hero-content > *{
+  animation: hero-in .38s cubic-bezier(.25,.9,.35,1) forwards;
+}
+.hero-slide.is-active .hero-content > *:nth-child(1){ animation-delay: .05s; } /* h2 */
+.hero-slide.is-active .hero-content > *:nth-child(2){ animation-delay: .14s; } /* p */
+.hero-slide.is-active .hero-content > *:nth-child(3){ animation-delay: .22s; } /* CTA */
+@keyframes hero-in{ to{ opacity:1; transform: translateY(0) scale(1); } }
+
+/* Respeto a accesibilidad: si el usuario prefiere menos movimiento */
+@media (prefers-reduced-motion: reduce){
+  .hero-arrow::after{ animation: none !important; }
+  .hero-slide .hero-content > *{ opacity: 1; transform: none; animation: none !important; }
+}
+
+/* ---------- Responsivo del hero ---------- */
+@media (max-width: 640px){
+  .hero-content{ gap: .9rem; padding: 1.25rem; }
+  .hero-content h2{ font-size: clamp(2rem, 6vw, 3rem); }
+  .hero-content p{ display: none; }          /* opcional: ocultar subtítulo en móvil */
+  .hero-slider > .hero-arrow{ width: 40px; height: 40px; }
+}
+
+@media (max-width:640px){ .hero-content{ transform: none; } }
+
+.hero-content .hero-cta{
+  margin-top: clamp(.6rem, 1.8vw, 1.4rem);
+}
+
+/*Catalogo */
+
+.contenedor-catalogo {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.gorra__informacion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 2rem;
+  margin-top: -5rem;
+}
+
+.gorra__precio {
+  font-weight: 500;
+}
+
+.gorra__negrita {
+  font-weight: bold;
+  
+}

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ===== Meta & Title ===== -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gansta Caps</title>
+
+    <!-- ===== Styles & Fonts ===== -->
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <!-- =======================================================
+         HEADER / NAV
+         ======================================================= -->
+    <header class="header">
+      <div class="navegacion-principal contenedor">
+        <!-- Logo + texto animado -->
+        <div class="parte-logo">
+          <a href="index.html">
+            <img class="logo" src="img/logo.svg" alt="imagen de logo" />
+          </a>
+          <p class="parte-logo__texto">Gansta Caps</p>
+        </div>
+
+        <!-- Navegación principal -->
+        <nav class="navegacion">
+          <!-- Enlaces -->
+          <a class="navegacion__enlace" href="">Catálogo</a>
+          <a class="navegacion__enlace" href="">Ofertas</a>
+          <a class="navegacion__enlace" href="">Gorras Premium</a>
+          <a class="navegacion__enlace" href=""></a>
+
+          <!-- Iconos sociales -->
+          <div class="iconos">
+            <div class="icono instagram">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="35"
+                height="35"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#fff"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="icon icon-tabler icons-tabler-outline icon-tabler-brand-instagram"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path
+                  d="M4 8a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z"
+                />
+                <path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
+                <path d="M16.5 7.5v.01" />
+              </svg>
+            </div>
+            <div class="icono whatsapp">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="35"
+                height="35"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#fff"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="icon icon-tabler icons-tabler-outline icon-tabler-brand-whatsapp"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path
+                  d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9"
+                />
+                <path
+                  d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1"
+                />
+              </svg>
+            </div>
+          </div>
+          <!-- Posible: falta cierre </div> ya existía en el código original -->
+        </nav>
+
+        <!-- Cierres originales conservados -->
+        <!-- (Se mantiene estructura tal cual sin modificar contenido) -->
+      </div>
+    </header>
+
+    <!-- =======================================================
+         BANNER (comentado en el original; se conserva igual)
+         ======================================================= -->
+    <!-- <div class="banner">
+        <div class="contenido-banner">
+            <div class="informacion">
+                <h2 class="informacion__titulo">Donde el estilo y la actitud se encuentran</h2>
+                <p class="informacion__descp">Colección exclusiva de gorras urbanas y calidad premium</p>
+                <a class="informacion__btn" href="#">Ver catálogo</a>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- =======================================================
+         HERO SLIDER
+         ======================================================= -->
+    <section
+      class="hero-slider"
+      aria-roledescription="carousel"
+      aria-label="Gorras destacadas"
+    >
+      <!-- Flecha Anterior -->
+      <button class="hero-arrow prev" aria-label="Anterior" data-dir="prev">
+        <!-- Tabler: arrow-narrow-left -->
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-left"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path d="M15 6l-6 6l6 6" />
+        </svg>
+      </button>
+
+      <!-- Flecha Siguiente -->
+      <button class="hero-arrow next" aria-label="Siguiente" data-dir="next">
+        <!-- Tabler: arrow-narrow-right -->
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path d="M9 6l6 6l-6 6" />
+        </svg>
+      </button>
+
+      <!-- Pista de slides -->
+      <div class="hero-track">
+        <!-- Slide 1 -->
+        <article
+          class="hero-slide is-active"
+          id="slide-1"
+          role="group"
+          aria-roledescription="slide"
+          aria-label="1 de 3"
+        >
+          <img
+            class="hero-media"
+            src="img/banner.jpg"
+            alt="Gorras urbanas sobre fondo de ciudad"
+          />
+          <div class="hero-overlay" aria-hidden="true"></div>
+          <div class="hero-content">
+            <h2>Catálogo Completo</h2>
+            <p>Explora toda nuestra variedad.</p>
+            <a href="catalogo.html" class="hero-cta">Explorar</a>
+          </div>
+        </article>
+
+        <!-- Slide 2 -->
+        <article
+          class="hero-slide"
+          id="slide-2"
+          role="group"
+          aria-roledescription="slide"
+          aria-label="2 de 3"
+        >
+          <img
+            class="hero-media"
+            src="img/img 5.jpg"
+            alt="Primeros planos de gorras edición limitada"
+          />
+          <div class="hero-overlay" aria-hidden="true"></div>
+          <div class="hero-content">
+            <h2>Ofertas especiales</h2>
+            <p>Descuentos increíbles por tiempo limitado</p>
+            <a href="#lanzamientos" class="hero-cta">Ver lanzamientos</a>
+          </div>
+        </article>
+
+        <!-- Slide 3 -->
+        <article
+          class="hero-slide"
+          id="slide-3"
+          role="group"
+          aria-roledescription="slide"
+          aria-label="3 de 3"
+        >
+          <img
+            class="hero-media"
+            src="img/img 6.jpg"
+            alt="Gorra en uso en ambiente urbano nocturno"
+          />
+          <div class="hero-overlay" aria-hidden="true"></div>
+          <div class="hero-content">
+            <h2>Gorras Premium</h2>
+            <p>Materiales premium, ajuste perfecto.</p>
+            <a href="#destacados" class="hero-cta">Comprar ahora</a>
+          </div>
+        </article>
+      </div>
+
+      <!-- Bullets / indicadores -->
+      <div class="hero-dots" role="tablist" aria-label="Seleccionar slide">
+        <button role="tab" aria-controls="slide-1" aria-selected="true" data-to="1"></button>
+        <button role="tab" aria-controls="slide-2" aria-selected="false" data-to="2"></button>
+        <button role="tab" aria-controls="slide-3" aria-selected="false" data-to="3"></button>
+      </div>
+    </section>
+
+    <!-- =======================================================
+         MAIN CONTENT
+         ======================================================= -->
+    <main>
+      <section class="por-que-elerginos contenedor">
+        <h2 class="por-que-elerginos__titulo">Exclusividad en cada detalle</h2>
+
+        <div class="por-que-contenedor">
+          <div class="por-que">
+            <h3>Diseños exclusivos</h3>
+            <p>
+              Gorras con personalidad propia para quienes quieren destacar y
+              llevar su estilo al siguiente nivel.
+            </p>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="35"
+              height="35"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="icon icon-tabler icons-tabler-outline icon-tabler-crown"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path
+                d="M12 6l4 6l5 -4l-2 10h-14l-2 -10l5 4z"
+              />
+            </svg>
+          </div>
+
+          <div class="por-que">
+            <h3>Pagos seguros</h3>
+            <p>
+              Realiza tu compra con total confianza, con un proceso de pago
+              seguro y sin complicaciones
+            </p>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="35"
+              height="35"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="icon icon-tabler icons-tabler-outline icon-tabler-shield-check"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path
+                d="M11.46 20.846a12 12 0 0 1 -7.96 -14.846a12 12 0 0 0 8.5 -3a12 12 0 0 0 8.5 3a12 12 0 0 1 -.09 7.06"
+              />
+              <path d="M15 19l2 2l4 -4" />
+            </svg>
+          </div>
+
+          <div class="por-que">
+            <h3>Atención personalizada</h3>
+            <p>
+              Te ayudamos a elegir la gorra perfecta para tu estilo y ocasión.
+            </p>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="35"
+              height="35"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="icon icon-tabler icons-tabler-outline icon-tabler-user-heart"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
+              <path d="M6 21v-2a4 4 0 0 1 4 -4h.5" />
+              <path
+                d="M18 22l3.35 -3.284a2.143 2.143 0 0 0 .005 -3.071a2.242 2.242 0 0 0 -3.129 -.006l-.224 .22l-.223 -.22a2.242 2.242 0 0 0 -3.128 -.006a2.143 2.143 0 0 0 -.006 3.071l3.355 3.296z"
+              />
+            </svg>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- =======================================================
+         SCRIPTS
+         ======================================================= -->
+    <script src="js/script.js"></script>
+  </body>
+</html>
