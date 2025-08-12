@@ -21,7 +21,7 @@
   --arrow-ring-color: #FACC15;        /* color del anillo que se llena */
   --arrow-ring-track: rgba(255,255,255,.30); /* base del anillo */
   --arrow-ring-thickness: 3px;        /* grosor del anillo */
-  --arrow-ring-outset: 3px;           /* cuánto “abraza” al botón */
+  --arrow-ring-outset: 1px;           /* cuánto “abraza” al botón */
   --arrow-fill-duration: 500ms;       /* duración del llenado */
 }
 
