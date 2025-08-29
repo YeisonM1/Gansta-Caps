@@ -110,3 +110,33 @@ document.addEventListener('DOMContentLoaded', () => {
   goTo(0);
   startAutoplay();
 });
+
+// ===== Dropdown Catálogo (accesible) =====
+(function(){
+  const root = document.querySelector('[data-dropdown]');
+  if(!root) return;
+  const trigger = root.querySelector('.dropdown__chevBtn');
+  const menu = root.querySelector('.dropdown__menu');
+  function open(){
+    root.classList.add('open');
+    trigger.setAttribute('aria-expanded','true');
+  }
+  function close(){
+    root.classList.remove('open');
+    trigger.setAttribute('aria-expanded','false');
+  }
+  trigger.addEventListener('click', (e)=>{
+    e.preventDefault();
+    root.classList.contains('open') ? close() : open();
+  });
+  document.addEventListener('click', (e)=>{
+    if(!root.contains(e.target)) close();
+  });
+  document.addEventListener('keydown', (e)=>{
+    if(e.key === 'Escape') close();
+  });
+  // focus control
+  menu.addEventListener('keydown', (e)=>{
+    if(e.key === 'Tab' && !menu.contains(document.activeElement)) close();
+  });
+})();

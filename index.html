@@ -34,7 +34,19 @@
         <!-- Navegación principal -->
         <nav class="navegacion">
           <!-- Enlaces -->
-          <a class="navegacion__enlace" href="catalogo.html">Catálogo</a>
+
+    <div class="dropdown" data-dropdown>
+      <a class="navegacion__enlace dropdown__link" href="catalogo.html">Catálogo</a>
+      <button class="dropdown__chevBtn" aria-label="Abrir categorías" aria-haspopup="true" aria-expanded="false" aria-controls="menu-catalogo"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+      <div class="dropdown__menu" id="menu-catalogo" role="menu">
+        <a role="menuitem" class="dropdown__item" href="catalogo.html#snapback">Snapback</a>
+        <a role="menuitem" class="dropdown__item" href="catalogo.html#trucker">Trucker</a>
+        <a role="menuitem" class="dropdown__item" href="catalogo.html#fivepanel">5‑Panel</a>
+        <a role="menuitem" class="dropdown__item" href="catalogo.html#dadhat">Dad Hat</a>
+        <a role="menuitem" class="dropdown__item" href="catalogo.html#beanies">Beanies</a>
+        <a role="menuitem" class="dropdown__item" href="catalogo.html#limited">Ed. Limitadas</a>
+      </div>
+    </div>
           <a class="navegacion__enlace" href="">Ofertas</a>
           <a class="navegacion__enlace" href="">Gorras Premium</a>
           <a class="navegacion__enlace" href=""></a>
