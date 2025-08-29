@@ -73,10 +73,14 @@ img { max-width: 100%; display: block; }
   justify-content: space-between;
 }
 
-.navegacion{
+.navegacion {
   display: flex;
   gap: 1.5rem;
   align-items: center;
+}
+.navegacion-footer {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .navegacion__enlace{
@@ -117,6 +121,10 @@ img { max-width: 100%; display: block; }
 
 /* Iconos sociales de la cabecera */
 .iconos{ display: flex; gap: 2rem; }
+.iconos-footer {
+  display: flex;
+  gap: 2rem;
+}
 
 .icono{
   position: relative;
@@ -143,11 +151,11 @@ img { max-width: 100%; display: block; }
    BANNER (si lo sigues usando en otras secciones)
    ========================================================= */
 .banner{
-  background-image: url(../img/banner.jpg);
-  height: 45rem;
+  background-image: url(../img/banner-extra.jpg);
+  height: 50rem;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: bottom left;
+  background-position: center center;
   position: relative;
 }
 .contenido-banner{ position: absolute; inset: 0; background-color: rgba(0,0,0,.6); }
@@ -548,4 +556,15 @@ img { max-width: 100%; display: block; }
 @media (max-width: 780px){
   .dropdown__menu{ left:0; right:0; transform: translateY(10px); margin-inline:.8rem; }
   .dropdown.open .dropdown__menu{ transform: translateY(12px); }
+}
+
+.footer {
+  margin-top: 3rem;
+}
+.info {
+  color: #fff;
+}
+.contenedor-info {
+  display: flex;
+  align-items: center;
 }
