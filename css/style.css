@@ -1426,6 +1426,7 @@ button {
    ======================================================= */
 
 .banner {
+  background-image: url(../img/banner-extra.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -1436,9 +1437,9 @@ button {
   justify-content: center;
 }
 
-.ofertas-banner {
+/* .ofertas-banner {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-}
+} */
 
 .premium-banner {
   background: linear-gradient(135deg, #434343 0%, #000000 100%);
