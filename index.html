@@ -1,402 +1,280 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <!-- ===== Meta & Title ===== -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gansta Caps</title>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gansta Caps - Gorras Urbanas Exclusivas</title>
 
-    <!-- ===== Styles & Fonts ===== -->
-    <link rel="stylesheet" href="css/normalize.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
+  <!-- Preconnect para mejorar performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Fuentes optimizadas -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Estilos -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
 
-  <body>
-    <!-- =======================================================
-         HEADER / NAV
-         ======================================================= -->
-    <header class="header">
-      <div class="navegacion-principal contenedor">
-        <!-- Logo + texto animado -->
-        <div class="parte-logo">
-          <a href="index.html">
-            <img class="logo" src="img/logo.svg" alt="imagen de logo" />
-          </a>
-          <p class="parte-logo__texto">Gansta Caps</p>
+<body>
+  <!-- HEADER RESPONSIVE -->
+  <header class="header">
+    <div class="navegacion-principal contenedor">
+      
+      <!-- Logo -->
+      <div class="parte-logo">
+        <a href="index.html">
+          <img class="logo" src="img/logo.svg" alt="Gansta Caps Logo" width="150" height="auto">
+        </a>
+        <p class="parte-logo__texto">Gansta Caps</p>
+      </div>
+
+      <!-- Navegación Desktop -->
+      <nav class="navegacion navegacion-desktop">
+        
+        <!-- Dropdown Catálogo -->
+        <div class="dropdown" data-dropdown>
+          <a class="navegacion__enlace dropdown__link" href="catalogo.html">Catálogo</a>
+          <button class="dropdown__chevBtn" aria-label="Abrir categorías" aria-haspopup="true" aria-expanded="false" aria-controls="menu-catalogo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m6 9 6 6 6-6"/>
+            </svg>
+          </button>
+          <div class="dropdown__menu" id="menu-catalogo" role="menu">
+            <a role="menuitem" class="dropdown__item" href="catalogo.html">Nuestros productos</a>
+          </div>
         </div>
 
-        <!-- Navegación principal -->
-        <nav class="navegacion">
-          <!-- Enlaces -->
+        <a class="navegacion__enlace" href="ofertas.html">Ofertas</a>
+        <a class="navegacion__enlace" href="premium.html">Gorras Premium</a>
 
-    <div class="dropdown" data-dropdown>
-      <a class="navegacion__enlace dropdown__link" href="catalogo.html">Catálogo</a>
-      <button class="dropdown__chevBtn" aria-label="Abrir categorías" aria-haspopup="true" aria-expanded="false" aria-controls="menu-catalogo"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
-      <div class="dropdown__menu" id="menu-catalogo" role="menu">
-        <a role="menuitem" class="dropdown__item" href="catalogo.html#snapback">Nuestros productos</a>
-        <!-- <a role="menuitem" class="dropdown__item" href="catalogo.html#trucker">Trucker</a>
-        <a role="menuitem" class="dropdown__item" href="catalogo.html#fivepanel">5‑Panel</a>
-        <a role="menuitem" class="dropdown__item" href="catalogo.html#dadhat">Dad Hat</a>
-        <a role="menuitem" class="dropdown__item" href="catalogo.html#beanies">Beanies</a>
-        <a role="menuitem" class="dropdown__item" href="catalogo.html#limited">Ed. Limitadas</a> -->
-      </div>
+        <!-- Iconos sociales -->
+        <div class="iconos">
+          <div class="icono instagram">
+            <a href="https://www.instagram.com/ganstacaps/" aria-label="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M4 8a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z"/>
+                <path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"/>
+                <path d="M16.5 7.5v.01"/>
+              </svg>
+            </a>
+          </div>
+          <div class="icono whatsapp">
+            <a href="https://wa.me/573007274969" target="_blank" aria-label="WhatsApp">
+              <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9"/>
+                <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Botón hamburguesa móvil -->
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
     </div>
-          <a class="navegacion__enlace" href="ofertas.html">Ofertas</a>
-          <a class="navegacion__enlace" href="premium.html">Gorras Premium</a>
-          <a class="navegacion__enlace" href=""></a>
 
-          <!-- Iconos sociales -->
-          <div class="iconos">
-            <div class="icono instagram">
-              <a href="https://www.instagram.com/ganstacaps/">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="35"
-                  height="35"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#fff"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-instagram"
-                >
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                  <path
-                    d="M4 8a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z"
-                  />
-                  <path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
-                  <path d="M16.5 7.5v.01" />
-                </svg>
-              </a>
-            </div>
-            <div class="icono whatsapp">
-              <a href="https://wa.me/573007274969" target="_blank">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="35"
-                  height="35"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#fff"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-whatsapp"
-                >
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                  <path
-                    d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9"
-                  />
-                  <path
-                    d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1"
-                  />
-                </svg>
-              </a>
-            </div>
-          </div>
-          <!-- Posible: falta cierre </div> ya existía en el código original -->
-        </nav>
-
-        <!-- Cierres originales conservados -->
-        <!-- (Se mantiene estructura tal cual sin modificar contenido) -->
-      </div>
-    </header>
-
-    <!-- =======================================================
-         BANNER (comentado en el original; se conserva igual)
-         ======================================================= -->
-    <!-- <div class="banner">
-        <div class="contenido-banner">
-            <div class="informacion">
-                <h2 class="informacion__titulo">Donde el estilo y la actitud se encuentran</h2>
-                <p class="informacion__descp">Colección exclusiva de gorras urbanas y calidad premium</p>
-                <a class="informacion__btn" href="#">Ver catálogo</a>
-            </div>
+    <!-- Menú móvil -->
+    <nav class="navegacion-mobile" id="navegacionMobile">
+      <div class="nav-mobile-content">
+        <a href="catalogo.html" class="nav-mobile-link">Catálogo</a>
+        <a href="ofertas.html" class="nav-mobile-link">Ofertas</a>
+        <a href="premium.html" class="nav-mobile-link">Gorras Premium</a>
+        
+        <div class="nav-mobile-social">
+          <a href="https://www.instagram.com/ganstacaps/" class="social-mobile-link">Instagram</a>
+          <a href="https://wa.me/573007274969" class="social-mobile-link">WhatsApp</a>
         </div>
-    </div> -->
-
-    <!-- =======================================================
-         HERO SLIDER
-         ======================================================= -->
-    <section
-      class="hero-slider"
-      aria-roledescription="carousel"
-      aria-label="Gorras destacadas"
-    >
-      <!-- Flecha Anterior -->
-      <button class="hero-arrow prev" aria-label="Anterior" data-dir="prev">
-        <!-- Tabler: arrow-narrow-left -->
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-left"
-        >
-          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-          <path d="M15 6l-6 6l6 6" />
-        </svg>
-      </button>
-
-      <!-- Flecha Siguiente -->
-      <button class="hero-arrow next" aria-label="Siguiente" data-dir="next">
-        <!-- Tabler: arrow-narrow-right -->
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"
-        >
-          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-          <path d="M9 6l6 6l-6 6" />
-        </svg>
-      </button>
-
-      <!-- Pista de slides -->
-      <div class="hero-track">
-        <!-- Slide 1 -->
-        <article
-          class="hero-slide is-active"
-          id="slide-1"
-          role="group"
-          aria-roledescription="slide"
-          aria-label="1 de 3"
-        >
-          <img
-            class="hero-media"
-            src="img/banner.jpg"
-            alt="Gorras urbanas sobre fondo de ciudad"
-          />
-          <div class="hero-overlay" aria-hidden="true"></div>
-          <div class="hero-content">
-            <h2>Catálogo Completo</h2>
-            <p>Explora toda nuestra variedad.</p>
-            <a href="catalogo.html" class="hero-cta">Explorar</a>
-          </div>
-        </article>
-
-        <!-- Slide 2 -->
-        <article
-          class="hero-slide"
-          id="slide-2"
-          role="group"
-          aria-roledescription="slide"
-          aria-label="2 de 3"
-        >
-          <img
-            class="hero-media"
-            src="img/img 5.jpg"
-            alt="Primeros planos de gorras edición limitada"
-          />
-          <div class="hero-overlay" aria-hidden="true"></div>
-          <div class="hero-content">
-            <h2>Ofertas especiales</h2>
-            <p>Descuentos increíbles por tiempo limitado</p>
-            <a href="#lanzamientos" class="hero-cta">Ver lanzamientos</a>
-          </div>
-        </article>
-
-        <!-- Slide 3 -->
-        <article
-          class="hero-slide"
-          id="slide-3"
-          role="group"
-          aria-roledescription="slide"
-          aria-label="3 de 3"
-        >
-          <img
-            class="hero-media"
-            src="img/img 6.jpg"
-            alt="Gorra en uso en ambiente urbano nocturno"
-          />
-          <div class="hero-overlay" aria-hidden="true"></div>
-          <div class="hero-content">
-            <h2>Gorras Premium</h2>
-            <p>Materiales premium, ajuste perfecto.</p>
-            <a href="#destacados" class="hero-cta">Comprar ahora</a>
-          </div>
-        </article>
       </div>
+    </nav>
+  </header>
 
-      <!-- Bullets / indicadores -->
-      <div class="hero-dots" role="tablist" aria-label="Seleccionar slide">
-        <button role="tab" aria-controls="slide-1" aria-selected="true" data-to="1"></button>
-        <button role="tab" aria-controls="slide-2" aria-selected="false" data-to="2"></button>
-        <button role="tab" aria-controls="slide-3" aria-selected="false" data-to="3"></button>
+  <!-- HERO SLIDER -->
+  <section class="hero-slider" aria-roledescription="carousel" aria-label="Gorras destacadas">
+    
+    <!-- Flecha Anterior -->
+    <button class="hero-arrow prev" aria-label="Anterior" data-dir="prev">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <path d="M15 6l-6 6l6 6"/>
+      </svg>
+    </button>
+
+    <!-- Flecha Siguiente -->
+    <button class="hero-arrow next" aria-label="Siguiente" data-dir="next">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <path d="M9 6l6 6l-6 6"/>
+      </svg>
+    </button>
+
+    <!-- Pista de slides -->
+    <div class="hero-track">
+      
+      <!-- Slide 1 -->
+      <article class="hero-slide is-active" id="slide-1" role="group" aria-roledescription="slide" aria-label="1 de 3">
+        <img class="hero-media" src="img/banner.jpg" alt="Gorras urbanas sobre fondo de ciudad" loading="lazy">
+        <div class="hero-overlay" aria-hidden="true"></div>
+        <div class="hero-content">
+          <h2>Catálogo Completo</h2>
+          <p>Explora toda nuestra variedad.</p>
+          <a href="catalogo.html" class="hero-cta">Explorar</a>
+        </div>
+      </article>
+
+      <!-- Slide 2 -->
+      <article class="hero-slide" id="slide-2" role="group" aria-roledescription="slide" aria-label="2 de 3">
+        <img class="hero-media" src="img/img 5.jpg" alt="Primeros planos de gorras edición limitada" loading="lazy">
+        <div class="hero-overlay" aria-hidden="true"></div>
+        <div class="hero-content">
+          <h2>Ofertas especiales</h2>
+          <p>Descuentos increíbles por tiempo limitado</p>
+          <a href="ofertas.html" class="hero-cta">Ver ofertas</a>
+        </div>
+      </article>
+
+      <!-- Slide 3 -->
+      <article class="hero-slide" id="slide-3" role="group" aria-roledescription="slide" aria-label="3 de 3">
+        <img class="hero-media" src="img/img 6.jpg" alt="Gorra en uso en ambiente urbano nocturno" loading="lazy">
+        <div class="hero-overlay" aria-hidden="true"></div>
+        <div class="hero-content">
+          <h2>Gorras Premium</h2>
+          <p>Materiales premium, ajuste perfecto.</p>
+          <a href="premium.html" class="hero-cta">Ver premium</a>
+        </div>
+      </article>
+    </div>
+
+    <!-- Bullets / indicadores -->
+    <div class="hero-dots" role="tablist" aria-label="Seleccionar slide">
+      <button role="tab" aria-controls="slide-1" aria-selected="true" data-to="1"></button>
+      <button role="tab" aria-controls="slide-2" aria-selected="false" data-to="2"></button>
+      <button role="tab" aria-controls="slide-3" aria-selected="false" data-to="3"></button>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <section class="por-que-elerginos contenedor">
+      <h2 class="por-que-elerginos__titulo">Exclusividad en cada detalle</h2>
+
+      <div class="por-que-contenedor">
+        
+        <div class="por-que">
+          <div class="por-que-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+              <path d="M12 6l4 6l5 -4l-2 10h-14l-2 -10l5 4z"/>
+            </svg>
+          </div>
+          <h3>Diseños exclusivos</h3>
+          <p>Gorras con personalidad propia para quienes quieren destacar y llevar su estilo al siguiente nivel.</p>
+        </div>
+
+        <div class="por-que">
+          <div class="por-que-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+              <path d="M11.46 20.846a12 12 0 0 1 -7.96 -14.846a12 12 0 0 0 8.5 -3a12 12 0 0 0 8.5 3a12 12 0 0 1 -.09 7.06"/>
+              <path d="M15 19l2 2l4 -4"/>
+            </svg>
+          </div>
+          <h3>Pagos seguros</h3>
+          <p>Realiza tu compra con total confianza, con un proceso de pago seguro y sin complicaciones</p>
+        </div>
+
+        <div class="por-que">
+          <div class="por-que-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+              <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0"/>
+              <path d="M6 21v-2a4 4 0 0 1 4 -4h.5"/>
+              <path d="M18 22l3.35 -3.284a2.143 2.143 0 0 0 .005 -3.071a2.242 2.242 0 0 0 -3.129 -.006l-.224 .22l-.223 -.22a2.242 2.242 0 0 0 -3.128 -.006a2.143 2.143 0 0 0 -.006 3.071l3.355 3.296z"/>
+            </svg>
+          </div>
+          <h3>Atención personalizada</h3>
+          <p>Te ayudamos a elegir la gorra perfecta para tu estilo y ocasión.</p>
+        </div>
       </div>
     </section>
+  </main>
 
-    <!-- =======================================================
-         MAIN CONTENT
-         ======================================================= -->
-    <main>
-      <section class="por-que-elerginos contenedor">
-        <h2 class="por-que-elerginos__titulo">Exclusividad en cada detalle</h2>
+  <!-- CARRITO FLOTANTE -->
+  <div class="carrito-flotante" id="carritoFlotante" style="display: none;">
+    <button class="carrito-indicator" id="carritoIndicator">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L6 5M9 19.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zM20.5 19.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+      </svg>
+      <span class="carrito-contador" id="carritoContador">0</span>
+      <span class="carrito-total" id="carritoTotal">$0</span>
+    </button>
+  </div>
 
-        <div class="por-que-contenedor">
-          <div class="por-que">
-            <h3>Diseños exclusivos</h3>
-            <p>
-              Gorras con personalidad propia para quienes quieren destacar y
-              llevar su estilo al siguiente nivel.
-            </p>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="35"
-              height="35"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="icon icon-tabler icons-tabler-outline icon-tabler-crown"
-            >
-              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-              <path
-                d="M12 6l4 6l5 -4l-2 10h-14l-2 -10l5 4z"
-              />
-            </svg>
-          </div>
-
-          <div class="por-que">
-            <h3>Pagos seguros</h3>
-            <p>
-              Realiza tu compra con total confianza, con un proceso de pago
-              seguro y sin complicaciones
-            </p>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="35"
-              height="35"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="icon icon-tabler icons-tabler-outline icon-tabler-shield-check"
-            >
-              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-              <path
-                d="M11.46 20.846a12 12 0 0 1 -7.96 -14.846a12 12 0 0 0 8.5 -3a12 12 0 0 0 8.5 3a12 12 0 0 1 -.09 7.06"
-              />
-              <path d="M15 19l2 2l4 -4" />
-            </svg>
-          </div>
-
-          <div class="por-que">
-            <h3>Atención personalizada</h3>
-            <p>
-              Te ayudamos a elegir la gorra perfecta para tu estilo y ocasión.
-            </p>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="35"
-              height="35"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="icon icon-tabler icons-tabler-outline icon-tabler-user-heart"
-            >
-              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-              <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
-              <path d="M6 21v-2a4 4 0 0 1 4 -4h.5" />
-              <path
-                d="M18 22l3.35 -3.284a2.143 2.143 0 0 0 .005 -3.071a2.242 2.242 0 0 0 -3.129 -.006l-.224 .22l-.223 -.22a2.242 2.242 0 0 0 -3.128 -.006a2.143 2.143 0 0 0 -.006 3.071l3.355 3.296z"
-              />
-            </svg>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="footer">
-      <div class="header">
-        <div class="contenedor contenedor-info">
-          <div class="info">
-            <h3>Contacto</h3>
-            <p> (57) 300 727 49 69</p>
-            <h3>Correo</h3>
-            <p>ganstacaps@gmail.com</p>
-          </div>
-          <div class="iconos-footer">
-            <div class="icono instagram">
-                <a href="https://www.instagram.com/ganstacaps/">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="35"
-                    height="35"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="#fff"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="icon icon-tabler icons-tabler-outline icon-tabler-brand-instagram"
-                  >
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                    <path
-                      d="M4 8a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z"
-                    />
-                    <path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
-                    <path d="M16.5 7.5v.01" />
-                  </svg>
-                </a>
-              </div>
-              <div class="icono whatsapp">
-                <a href="https://wa.me/573007274969" target="_blank">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="35"
-                    height="35"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="#fff"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="icon icon-tabler icons-tabler-outline icon-tabler-brand-whatsapp"
-                  >
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                    <path
-                      d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9"
-                    />
-                    <path
-                      d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1"
-                    />
-                  </svg>
-                </a>
-              </div>
-          </div>  
+  <!-- MODAL DEL CARRITO -->
+  <div class="carrito-modal" id="carritoModal">
+    <div class="modal-overlay" id="modalOverlay"></div>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Mi Pedido</h3>
+        <button class="modal-close" id="modalClose">&times;</button>
+      </div>
+      <div class="carrito-items" id="carritoItems"></div>
+      <div class="carrito-summary">
+        <div class="carrito-summary-total">
+          <strong>Total: <span id="carritoSummaryTotal">$0</span></strong>
         </div>
       </div>
-    </footer>
+      <div class="carrito-actions">
+        <button class="btn-whatsapp" id="enviarWhatsApp">📱 Enviar Pedido por WhatsApp</button>
+        <button class="btn-limpiar" id="limpiarCarrito">🗑️ Vaciar Carrito</button>
+      </div>
+    </div>
+  </div>
 
-    <!-- =======================================================
-         SCRIPTS
-         ======================================================= -->
-    <script src="js/script.js"></script>
-  </body>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="header">
+      <div class="contenedor contenedor-info">
+        <div class="info">
+          <h3>Contacto</h3>
+          <p>(57) 300 727 49 69</p>
+          <h3>Correo</h3>
+          <p>ganstacaps@gmail.com</p>
+        </div>
+        <div class="iconos-footer">
+          <div class="icono instagram">
+            <a href="https://www.instagram.com/ganstacaps/" aria-label="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M4 8a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z"/>
+                <path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"/>
+                <path d="M16.5 7.5v.01"/>
+              </svg>
+            </a>
+          </div>
+          <div class="icono whatsapp">
+            <a href="https://wa.me/573007274969" target="_blank" aria-label="WhatsApp">
+              <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9"/>
+                <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1"/>
+              </svg>
+            </a>
+          </div>
+        </div>  
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="js/script.js"></script>
+  <script src="js/carrito.js"></script>
+</body>
 </html>

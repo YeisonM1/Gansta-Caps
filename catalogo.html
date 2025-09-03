@@ -1,423 +1,492 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <!-- ===== Meta & Title ===== -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gansta Caps</title>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo - Gansta Caps</title>
 
-    <!-- ===== Styles & Fonts ===== -->
-    <link rel="stylesheet" href="css/normalize.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="css/style.css" />
+  <!-- Preconnect para mejorar performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Fuentes optimizadas -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Estilos -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
 
-  </head>
-
-  <body>
-    <!-- =======================================================
-         HEADER / NAV
-         ======================================================= -->
-    <header class="header">
-      <div class="navegacion-principal contenedor">
-        <!-- Logo + texto animado -->
-        <div class="parte-logo">
-          <a href="index.html">
-            <img class="logo" src="img/logo.svg" alt="imagen de logo" />
-          </a>
-          <p class="parte-logo__texto">Gansta Caps</p>
-        </div>
-
-        <!-- Navegación principal -->
-        <nav class="navegacion">
-          <!-- Enlaces -->
-          <a class="navegacion__enlace" href="">Catálogo</a>
-          <a class="navegacion__enlace" href="ofertas.html">Ofertas</a>
-          <a class="navegacion__enlace" href="">Gorras Premium</a>
-          <a class="navegacion__enlace" href=""></a>
-
-          <!-- Iconos sociales -->
-          <div class="iconos">
-            <div class="icono instagram">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="35"
-                height="35"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#fff"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="icon icon-tabler icons-tabler-outline icon-tabler-brand-instagram"
-              >
-                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                <path
-                  d="M4 8a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z"
-                />
-                <path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
-                <path d="M16.5 7.5v.01" />
-              </svg>
-            </div>
-            <div class="icono whatsapp">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="35"
-                height="35"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#fff"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="icon icon-tabler icons-tabler-outline icon-tabler-brand-whatsapp"
-              >
-                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                <path
-                  d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9"
-                />
-                <path
-                  d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1"
-                />
-              </svg>
-            </div>
-          </div>
-          <!-- Posible: falta cierre </div> ya existía en el código original -->
-        </nav>
-
-        <!-- Cierres originales conservados -->
-        <!-- (Se mantiene estructura tal cual sin modificar contenido) -->
+<body>
+  <!-- HEADER RESPONSIVE -->
+  <header class="header">
+    <div class="navegacion-principal contenedor">
+      
+      <!-- Logo -->
+      <div class="parte-logo">
+        <a href="index.html">
+          <img class="logo" src="img/logo.svg" alt="Gansta Caps Logo" width="150" height="auto">
+        </a>
+        <p class="parte-logo__texto">Gansta Caps</p>
       </div>
-    </header>
 
-    <main class="contenedor">
-      <!-- Título y subtítulo del catálogo -->
-        <div class="catalogo-titulo">
-          <h1>Catálogo de Gorras</h1>
-          <p>Explora nuestra colección de gorras urbanas, estilo y calidad en cada detalle</p>
+      <!-- Navegación Desktop -->
+      <nav class="navegacion navegacion-desktop">
+        <a class="navegacion__enlace" href="catalogo.html">Catálogo</a>
+        <a class="navegacion__enlace" href="ofertas.html">Ofertas</a>
+        <a class="navegacion__enlace" href="premium.html">Gorras Premium</a>
+
+        <!-- Iconos sociales -->
+        <div class="iconos">
+          <div class="icono instagram">
+            <a href="https://www.instagram.com/ganstacaps/" aria-label="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M4 8a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z"/>
+                <path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"/>
+                <path d="M16.5 7.5v.01"/>
+              </svg>
+            </a>
+          </div>
+          <div class="icono whatsapp">
+            <a href="https://wa.me/573007274969" target="_blank" aria-label="WhatsApp">
+              <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9"/>
+                <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1"/>
+              </svg>
+            </a>
+          </div>
         </div>
+      </nav>
 
-        <!-- Grid del catálogo -->
-<section class="catalogo-grid">
-  <!-- Card 1 (duplica este bloque para más productos) --
+      <!-- Botón hamburguesa móvil -->
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
 
-  <!-- EJEMPLO Card 2 (opcional) -->
-  <article class="card-producto">
-    <!-- <span class="stock-badge" aria-label="Unidades disponibles">2 unidades</span> -->
-    <figure class="card-media">
-      <img src="img/gorra-2.png" alt="Gorra urbana modelo 2">
-    </figure>
-    <div class="card-info">
-      <h2 class="card-titulo">Blow up</h2>
-      <p class="card-precio"><span class="card-span">$</span> 38.999</p>
-    </div>
-    <div class="card-acciones">
-      <a
-  href="#"
-  class="btn-comprar"
-  data-title="Gorra Urbana Modelo 1"
-  data-price="37999"  <!-- solo números, en COP -->
-  Comprar ahora
-</a>
-    </div>
-  </article>
-  <article class="card-producto">
-    <!-- <span class="stock-badge" aria-label="Unidades disponibles">/2 unidades</span> -->
-    <figure class="card-media">
-      <img src="img/gorra-3.png" alt="Gorra urbana modelo 2">
-    </figure>
-    <div class="card-info">
-      <h2 class="card-titulo">San francisco giants</h2>
-      <p class="card-precio"><span class="card-span">$</span> 38.999</p>
-    </div>
-    <div class="card-acciones">
-      <a
-  href="#"
-  class="btn-comprar"
-  data-title="Gorra Urbana Modelo 1"
-  data-price="37999"  <!-- solo números, en COP -->
-  Comprar ahora
-</a>
-    </div>
-  </article>
-  <article class="card-producto">
-    <!-- <span class="stock-badge" aria-label="Unidades disponibles">2 unidades</span> -->
-    <figure class="card-media">
-      <img src="img/gorra-4.png" alt="Gorra urbana modelo 2">
-    </figure>
-    <div class="card-info">
-      <h2 class="card-titulo">chicago bulls</h2>
-      <p class="card-precio"><span class="card-span">$</span> 38.999</p>
-    </div>
-    <div class="card-acciones">
-      <a
-  href="#"
-  class="btn-comprar"
-  data-title="Gorra Urbana Modelo 1"
-  data-price="37999"  <!-- solo números, en COP -->
-  Comprar ahora
-</a>
-    </div>
-  </article>
-  <article class="card-producto">
-    <!-- <span class="stock-badge" aria-label="Unidades disponibles">2 unidades</span> -->
-    <figure class="card-media">
-      <img src="img/gorra-5.png" alt="Gorra urbana modelo 2">
-    </figure>
-    <div class="card-info">
-      <h2 class="card-titulo">Chicago white sox</h2>
-      <p class="card-precio"><span class="card-span">$</span> 38.999</p>
-    </div>
-    <div class="card-acciones">
-      <a
-  href="#"
-  class="btn-comprar"
-  data-title="Gorra Urbana Modelo 1"
-  data-price="37999"  <!-- solo números, en COP -->
-  Comprar ahora
-</a>
-    </div>
-  </article>
-  <article class="card-producto">
-    <!-- <span class="stock-badge" aria-label="Unidades disponibles">2 unidades</span> -->
-    <figure class="card-media">
-      <img src="img/gorra-6.png" alt="Gorra urbana modelo 2">
-    </figure>
-    <div class="card-info">
-      <h2 class="card-titulo">Blow up</h2>
-      <p class="card-precio"><span class="card-span">$</span> 38.999</p>
-    </div>
-    <div class="card-acciones">
-      <a
-  href="#"
-  class="btn-comprar"
-  data-title="Gorra Urbana Modelo 1"
-  data-price="37999"  <!-- solo números, en COP -->
-  Comprar ahora
-</a>
-    </div>
-  </article>
-  <article class="card-producto">
-    <!-- <span class="stock-badge" aria-label="Unidades disponibles">2 unidades</span> -->
-    <figure class="card-media">
-      <img src="img/gorra-7.png" alt="Gorra urbana modelo 2">
-    </figure>
-    <div class="card-info">
-      <h2 class="card-titulo">Pittsburgh pirates</h2>
-      <p class="card-precio"><span class="card-span">$</span> 38.999</p>
-    </div>
-    <div class="card-acciones">
-      <a
-  href="#"
-  class="btn-comprar"
-  data-title="Gorra Urbana Modelo 1"
-  data-price="37999"  <!-- solo números, en COP -->
-  Comprar ahora
-</a>
-    </div>
-  </article>
-  <article class="card-producto">
-    <!-- <span class="stock-badge" aria-label="Unidades disponibles">2 unidades</span> -->
-    <figure class="card-media">
-      <img src="img/gorra-8.png" alt="Gorra urbana modelo 2">
-    </figure>
-    <div class="card-info">
-      <h2 class="card-titulo">Los angeles dodgers</h2>
-      <p class="card-precio"><span class="card-span">$</span> 38.999</p>
-    </div>
-    <div class="card-acciones">
-      <a
-  href="#"
-  class="btn-comprar"
-  data-title="Gorra Urbana Modelo 1"
-  data-price="37999"  <!-- solo números, en COP -->
-  Comprar ahora
-</a>
-    </div>
-  </article>
-  <article class="card-producto">
-    <!-- <span class="stock-badge" aria-label="Unidades disponibles">2 unidades</span> -->
-    <figure class="card-media">
-      <img src="img/gorra-9.png" alt="Gorra urbana modelo 2">
-    </figure>
-    <div class="card-info">
-      <h2 class="card-titulo">Cleveland guardians</h2>
-      <p class="card-precio"><span class="card-span">$</span> 38.999</p>
-    </div>
-    <div class="card-acciones">
-      <a
-  href="#"
-  class="btn-comprar"
-  data-title="Gorra Urbana Modelo 1"
-  data-price="37999"  <!-- solo números, en COP -->
-  Comprar ahora
-</a>
-    </div>
-  </article>
-  <article class="card-producto">
-    <!-- <span class="stock-badge" aria-label="Unidades disponibles">2 unidades</span> -->
-    <figure class="card-media">
-      <img src="img/gorra-10.png" alt="Gorra urbana modelo 2">
-    </figure>
-    <div class="card-info">
-      <h2 class="card-titulo">Blow up</h2>
-      <p class="card-precio"><span class="card-span">$</span> 38.999</p>
-    </div>
-    <div class="card-acciones">
-      <a
-  href="#"
-  class="btn-comprar"
-  data-title="Gorra Urbana Modelo 1"
-  data-price="37999"  <!-- solo números, en COP -->
-  Comprar ahora
-</a>
-    </div>
-  </article>
-  <article class="card-producto">
-    <!-- <span class="stock-badge" aria-label="Unidades disponibles">2 unidades</span> -->
-    <figure class="card-media">
-      <img src="img/gorra-12.png" alt="Gorra urbana modelo 2">
-    </figure>
-    <div class="card-info">
-      <h2 class="card-titulo">Blow up</h2>
-      <p class="card-precio"><span class="card-span">$</span> 38.999</p>
-    </div>
-    <div class="card-acciones">
-      <a
-  href="#"
-  class="btn-comprar"
-  data-title="Gorra Urbana Modelo 1"
-  data-price="37999"  <!-- solo números, en COP -->
-  Comprar ahora
-</a>
-    </div>
-  </article>
-  <article class="card-producto">
-    <!-- <span class="stock-badge" aria-label="Unidades disponibles">2 unidades</span> -->
-    <figure class="card-media">
-      <img src="img/gorra-13.png" alt="Gorra urbana modelo 2">
-    </figure>
-    <div class="card-info">
-      <h2 class="card-titulo">Boston red Sox</h2>
-      <p class="card-precio"><span class="card-span">$</span> 38.999</p>
-    </div>
-    <div class="card-acciones">
-      <a
-  href="#"
-  class="btn-comprar"
-  data-title="Gorra Urbana Modelo 1"
-  data-price="37999"  <!-- solo números, en COP -->
-  Comprar ahora
-</a>
-    </div>
-  </article>
-  <article class="card-producto">
-    <!-- <span class="stock-badge" aria-label="Unidades disponibles">2 unidades</span> -->
-    <figure class="card-media">
-      <img src="img/gorra-14.jpg" alt="Gorra urbana modelo 2">
-    </figure>
-    <div class="card-info">
-      <h2 class="card-titulo">Los angeles dodgers</h2>
-      <p class="card-precio"><span class="card-span">$</span> 38.999</p>
-    </div>
-    <div class="card-acciones">
-      <a
-  href="#"
-  class="btn-comprar"
-  data-title="Gorra Urbana Modelo 1"
-  data-price="37999"  <!-- solo números, en COP -->
-  Comprar ahora
-</a>
-    </div>
-  </article>
-  <article class="card-producto">
-    <!-- <span class="stock-badge" aria-label="Unidades disponibles">2 unidades</span> -->
-    <figure class="card-media">
-      <img src="img/gorra-15.jpg" alt="Gorra urbana modelo 2">
-    </figure>
-    <div class="card-info">
-      <h2 class="card-titulo">Amiri</h2>
-      <p class="card-precio"><span class="card-span">$</span> 38.999</p>
-    </div>
-    <div class="card-acciones">
-      <a
-  href="#"
-  class="btn-comprar"
-  data-title="Gorra Urbana Modelo 1"
-  data-price="37999"  <!-- solo números, en COP -->
-  Comprar ahora
-</a>
-    </div>
-  </article>
-  <article class="card-producto">
-    <!-- <span class="stock-badge" aria-label="Unidades disponibles">2 unidades</span> -->
-    <figure class="card-media">
-      <img src="img/gorra-16.jpg" alt="Gorra urbana modelo 2">
-    </figure>
-    <div class="card-info">
-      <h2 class="card-titulo">Blow up</h2>
-      <p class="card-precio"><span class="card-span">$</span> 38.999</p>
-    </div>
-    <div class="card-acciones">
-      <a
-  href="#"
-  class="btn-comprar"
-  data-title="Gorra Urbana Modelo 1"
-  data-price="37999"  <!-- solo números, en COP -->
-  Comprar ahora
-</a>
-    </div>
-  </article>
-  <article class="card-producto">
-    <!-- <span class="stock-badge" aria-label="Unidades disponibles">2 unidades</span> -->
-    <figure class="card-media">
-      <img src="img/gorra-17.jpg" alt="Gorra urbana modelo 2">
-    </figure>
-    <div class="card-info">
-      <h2 class="card-titulo">San francisco giants</h2>
-      <p class="card-precio"><span class="card-span">$</span> 38.999</p>
-    </div>
-    <div class="card-acciones">
-      <a
-  href="#"
-  class="btn-comprar"
-  data-title="Gorra Urbana Modelo 1"
-  data-price="37999"  <!-- solo números, en COP -->
-  Comprar ahora
-</a>
-    </div>
-  </article>
-  <article class="card-producto">
-    <!-- <span class="stock-badge" aria-label="Unidades disponibles">2 unidades</span> -->
-    <figure class="card-media">
-      <img src="img/gorra-18.jpg" alt="Gorra urbana modelo 2">
-    </figure>
-    <div class="card-info">
-      <h2 class="card-titulo">New York yankees</h2>
-      <p class="card-precio"><span class="card-span">$</span> 38.999</p>
-    </div>
-    <div class="card-acciones">
-      <a
-  href="#"
-  class="btn-comprar"
-  data-title="Gorra Urbana Modelo 1"
-  data-price="37999"  <!-- solo números, en COP -->
-  Comprar ahora
-</a>
-    </div>
-  </article>
-</section>
-   </main>
+    <!-- Menú móvil -->
+    <nav class="navegacion-mobile" id="navegacionMobile">
+      <div class="nav-mobile-content">
+        <a href="catalogo.html" class="nav-mobile-link">Catálogo</a>
+        <a href="ofertas.html" class="nav-mobile-link">Ofertas</a>
+        <a href="premium.html" class="nav-mobile-link">Gorras Premium</a>
+        
+        <div class="nav-mobile-social">
+          <a href="https://www.instagram.com/ganstacaps/" class="social-mobile-link">Instagram</a>
+          <a href="https://wa.me/573007274969" class="social-mobile-link">WhatsApp</a>
+        </div>
+      </div>
+    </nav>
+  </header>
 
-    <!-- =======================================================
-         SCRIPTS
-         ======================================================= -->
-    <script src="js/catalog.js"></script>
-    <script src="js/script.js"></script>
-    <script src="js/whatsapp-mvp.js"></script>
-  </body>
+  <!-- MAIN CONTENT -->
+  <main class="contenedor">
+    
+    <!-- Título del catálogo -->
+    <div class="catalogo-titulo">
+      <h1>Catálogo de Gorras</h1>
+      <p>Explora nuestra colección de gorras urbanas, estilo y calidad en cada detalle</p>
+    </div>
+
+    <!-- Grid del catálogo -->
+    <section class="catalogo-grid">
+      
+      <!-- PRODUCTO 1 -->
+      <article class="card-producto">
+        <figure class="card-media">
+          <img src="img/gorra-2.png" alt="Gorra urbana Blow up" loading="lazy">
+        </figure>
+        <div class="card-info">
+          <h2 class="card-titulo">Blow up</h2>
+          <p class="card-precio"><span class="card-span">$</span> 38.999</p>
+        </div>
+        <div class="card-acciones">
+          <button 
+            class="btn-agregar-carrito" 
+            data-name="Blow up"
+            data-price="38999"
+            data-image="img/gorra-2.png">
+            Agregar al pedido
+          </button>
+        </div>
+      </article>
+
+      <!-- PRODUCTO 2 -->
+      <article class="card-producto">
+        <figure class="card-media">
+          <img src="img/gorra-3.png" alt="Gorra urbana San Francisco Giants" loading="lazy">
+        </figure>
+        <div class="card-info">
+          <h2 class="card-titulo">San Francisco Giants</h2>
+          <p class="card-precio"><span class="card-span">$</span> 38.999</p>
+        </div>
+        <div class="card-acciones">
+          <button 
+            class="btn-agregar-carrito" 
+            data-name="San Francisco Giants"
+            data-price="38999"
+            data-image="img/gorra-3.png">
+            Agregar al pedido
+          </button>
+        </div>
+      </article>
+
+      <!-- PRODUCTO 3 -->
+      <article class="card-producto">
+        <figure class="card-media">
+          <img src="img/gorra-4.png" alt="Gorra urbana Chicago Bulls" loading="lazy">
+        </figure>
+        <div class="card-info">
+          <h2 class="card-titulo">Chicago Bulls</h2>
+          <p class="card-precio"><span class="card-span">$</span> 38.999</p>
+        </div>
+        <div class="card-acciones">
+          <button 
+            class="btn-agregar-carrito" 
+            data-name="Chicago Bulls"
+            data-price="38999"
+            data-image="img/gorra-4.png">
+            Agregar al pedido
+          </button>
+        </div>
+      </article>
+
+      <!-- PRODUCTO 4 -->
+      <article class="card-producto">
+        <figure class="card-media">
+          <img src="img/gorra-5.png" alt="Gorra urbana Chicago White Sox" loading="lazy">
+        </figure>
+        <div class="card-info">
+          <h2 class="card-titulo">Chicago White Sox</h2>
+          <p class="card-precio"><span class="card-span">$</span> 38.999</p>
+        </div>
+        <div class="card-acciones">
+          <button 
+            class="btn-agregar-carrito" 
+            data-name="Chicago White Sox"
+            data-price="38999"
+            data-image="img/gorra-5.png">
+            Agregar al pedido
+          </button>
+        </div>
+      </article>
+
+      <!-- PRODUCTO 5 -->
+      <article class="card-producto">
+        <figure class="card-media">
+          <img src="img/gorra-6.png" alt="Gorra urbana Blow up Black" loading="lazy">
+        </figure>
+        <div class="card-info">
+          <h2 class="card-titulo">Blow up</h2>
+          <p class="card-precio"><span class="card-span">$</span> 38.999</p>
+        </div>
+        <div class="card-acciones">
+          <button 
+            class="btn-agregar-carrito" 
+            data-name="Blow up Black"
+            data-price="38999"
+            data-image="img/gorra-6.png">
+            Agregar al pedido
+          </button>
+        </div>
+      </article>
+
+      <!-- PRODUCTO 6 -->
+      <article class="card-producto">
+        <figure class="card-media">
+          <img src="img/gorra-7.png" alt="Gorra urbana Pittsburgh Pirates" loading="lazy">
+        </figure>
+        <div class="card-info">
+          <h2 class="card-titulo">Pittsburgh Pirates</h2>
+          <p class="card-precio"><span class="card-span">$</span> 38.999</p>
+        </div>
+        <div class="card-acciones">
+          <button 
+            class="btn-agregar-carrito" 
+            data-name="Pittsburgh Pirates"
+            data-price="38999"
+            data-image="img/gorra-7.png">
+            Agregar al pedido
+          </button>
+        </div>
+      </article>
+
+      <!-- PRODUCTO 7 -->
+      <article class="card-producto">
+        <figure class="card-media">
+          <img src="img/gorra-8.png" alt="Gorra urbana Los Angeles Dodgers" loading="lazy">
+        </figure>
+        <div class="card-info">
+          <h2 class="card-titulo">Los Angeles Dodgers</h2>
+          <p class="card-precio"><span class="card-span">$</span> 38.999</p>
+        </div>
+        <div class="card-acciones">
+          <button 
+            class="btn-agregar-carrito" 
+            data-name="Los Angeles Dodgers"
+            data-price="38999"
+            data-image="img/gorra-8.png">
+            Agregar al pedido
+          </button>
+        </div>
+      </article>
+
+      <!-- PRODUCTO 8 -->
+      <article class="card-producto">
+        <figure class="card-media">
+          <img src="img/gorra-9.png" alt="Gorra urbana Cleveland Guardians" loading="lazy">
+        </figure>
+        <div class="card-info">
+          <h2 class="card-titulo">Cleveland Guardians</h2>
+          <p class="card-precio"><span class="card-span">$</span> 38.999</p>
+        </div>
+        <div class="card-acciones">
+          <button 
+            class="btn-agregar-carrito" 
+            data-name="Cleveland Guardians"
+            data-price="38999"
+            data-image="img/gorra-9.png">
+            Agregar al pedido
+          </button>
+        </div>
+      </article>
+
+      <!-- PRODUCTO 9 -->
+      <article class="card-producto">
+        <figure class="card-media">
+          <img src="img/gorra-10.png" alt="Gorra urbana Blow up White" loading="lazy">
+        </figure>
+        <div class="card-info">
+          <h2 class="card-titulo">Blow up</h2>
+          <p class="card-precio"><span class="card-span">$</span> 38.999</p>
+        </div>
+        <div class="card-acciones">
+          <button 
+            class="btn-agregar-carrito" 
+            data-name="Blow up White"
+            data-price="38999"
+            data-image="img/gorra-10.png">
+            Agregar al pedido
+          </button>
+        </div>
+      </article>
+
+      <!-- PRODUCTO 10 -->
+      <article class="card-producto">
+        <figure class="card-media">
+          <img src="img/gorra-12.png" alt="Gorra urbana Blow up Grey" loading="lazy">
+        </figure>
+        <div class="card-info">
+          <h2 class="card-titulo">Blow up</h2>
+          <p class="card-precio"><span class="card-span">$</span> 38.999</p>
+        </div>
+        <div class="card-acciones">
+          <button 
+            class="btn-agregar-carrito" 
+            data-name="Blow up Grey"
+            data-price="38999"
+            data-image="img/gorra-12.png">
+            Agregar al pedido
+          </button>
+        </div>
+      </article>
+
+      <!-- PRODUCTO 11 -->
+      <article class="card-producto">
+        <figure class="card-media">
+          <img src="img/gorra-13.png" alt="Gorra urbana Boston Red Sox" loading="lazy">
+        </figure>
+        <div class="card-info">
+          <h2 class="card-titulo">Boston Red Sox</h2>
+          <p class="card-precio"><span class="card-span">$</span> 38.999</p>
+        </div>
+        <div class="card-acciones">
+          <button 
+            class="btn-agregar-carrito" 
+            data-name="Boston Red Sox"
+            data-price="38999"
+            data-image="img/gorra-13.png">
+            Agregar al pedido
+          </button>
+        </div>
+      </article>
+
+      <!-- PRODUCTO 12 -->
+      <article class="card-producto">
+        <figure class="card-media">
+          <img src="img/gorra-14.jpg" alt="Gorra urbana Los Angeles Dodgers Black" loading="lazy">
+        </figure>
+        <div class="card-info">
+          <h2 class="card-titulo">Los Angeles Dodgers</h2>
+          <p class="card-precio"><span class="card-span">$</span> 38.999</p>
+        </div>
+        <div class="card-acciones">
+          <button 
+            class="btn-agregar-carrito" 
+            data-name="Los Angeles Dodgers Black"
+            data-price="38999"
+            data-image="img/gorra-14.jpg">
+            Agregar al pedido
+          </button>
+        </div>
+      </article>
+
+      <!-- PRODUCTO 13 -->
+      <article class="card-producto">
+        <figure class="card-media">
+          <img src="img/gorra-15.jpg" alt="Gorra urbana Amiri" loading="lazy">
+        </figure>
+        <div class="card-info">
+          <h2 class="card-titulo">Amiri</h2>
+          <p class="card-precio"><span class="card-span">$</span> 38.999</p>
+        </div>
+        <div class="card-acciones">
+          <button 
+            class="btn-agregar-carrito" 
+            data-name="Amiri"
+            data-price="38999"
+            data-image="img/gorra-15.jpg">
+            Agregar al pedido
+          </button>
+        </div>
+      </article>
+
+      <!-- PRODUCTO 14 -->
+      <article class="card-producto">
+        <figure class="card-media">
+          <img src="img/gorra-16.jpg" alt="Gorra urbana Blow up Navy" loading="lazy">
+        </figure>
+        <div class="card-info">
+          <h2 class="card-titulo">Blow up</h2>
+          <p class="card-precio"><span class="card-span">$</span> 38.999</p>
+        </div>
+        <div class="card-acciones">
+          <button 
+            class="btn-agregar-carrito" 
+            data-name="Blow up Navy"
+            data-price="38999"
+            data-image="img/gorra-16.jpg">
+            Agregar al pedido
+          </button>
+        </div>
+      </article>
+
+      <!-- PRODUCTO 15 -->
+      <article class="card-producto">
+        <figure class="card-media">
+          <img src="img/gorra-17.jpg" alt="Gorra urbana San Francisco Giants Black" loading="lazy">
+        </figure>
+        <div class="card-info">
+          <h2 class="card-titulo">San Francisco Giants</h2>
+          <p class="card-precio"><span class="card-span">$</span> 38.999</p>
+        </div>
+        <div class="card-acciones">
+          <button 
+            class="btn-agregar-carrito" 
+            data-name="San Francisco Giants Black"
+            data-price="38999"
+            data-image="img/gorra-17.jpg">
+            Agregar al pedido
+          </button>
+        </div>
+      </article>
+
+      <!-- PRODUCTO 16 -->
+      <article class="card-producto">
+        <figure class="card-media">
+          <img src="img/gorra-18.jpg" alt="Gorra urbana New York Yankees" loading="lazy">
+        </figure>
+        <div class="card-info">
+          <h2 class="card-titulo">New York Yankees</h2>
+          <p class="card-precio"><span class="card-span">$</span> 38.999</p>
+        </div>
+        <div class="card-acciones">
+          <button 
+            class="btn-agregar-carrito" 
+            data-name="New York Yankees"
+            data-price="38999"
+            data-image="img/gorra-18.jpg">
+            Agregar al pedido
+          </button>
+        </div>
+      </article>
+
+    </section>
+  </main>
+
+  <!-- CARRITO FLOTANTE -->
+  <div class="carrito-flotante" id="carritoFlotante" style="display: none;">
+    <button class="carrito-indicator" id="carritoIndicator">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L6 5M9 19.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zM20.5 19.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+      </svg>
+      <span class="carrito-contador" id="carritoContador">0</span>
+      <span class="carrito-total" id="carritoTotal">$0</span>
+    </button>
+  </div>
+
+  <!-- MODAL DEL CARRITO -->
+  <div class="carrito-modal" id="carritoModal">
+    <div class="modal-overlay" id="modalOverlay"></div>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Mi Pedido</h3>
+        <button class="modal-close" id="modalClose">&times;</button>
+      </div>
+      <div class="carrito-items" id="carritoItems"></div>
+      <div class="carrito-summary">
+        <div class="carrito-summary-total">
+          <strong>Total: <span id="carritoSummaryTotal">$0</span></strong>
+        </div>
+      </div>
+      <div class="carrito-actions">
+        <button class="btn-whatsapp" id="enviarWhatsApp">📱 Enviar Pedido por WhatsApp</button>
+        <button class="btn-limpiar" id="limpiarCarrito">🗑️ Vaciar Carrito</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="header">
+      <div class="contenedor contenedor-info">
+        <div class="info">
+          <h3>Contacto</h3>
+          <p>(57) 300 727 49 69</p>
+          <h3>Correo</h3>
+          <p>ganstacaps@gmail.com</p>
+        </div>
+        <div class="iconos-footer">
+          <div class="icono instagram">
+            <a href="https://www.instagram.com/ganstacaps/" aria-label="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M4 8a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z"/>
+                <path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"/>
+                <path d="M16.5 7.5v.01"/>
+              </svg>
+            </a>
+          </div>
+          <div class="icono whatsapp">
+            <a href="https://wa.me/573007274969" target="_blank" aria-label="WhatsApp">
+              <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9"/>
+                <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1"/>
+              </svg>
+            </a>
+          </div>
+        </div>  
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="js/script.js"></script>
+  <script src="js/carrito.js"></script>
+</body>
 </html>

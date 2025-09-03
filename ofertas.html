@@ -1,122 +1,212 @@
+<!-- ===============================================
+     OFERTAS.HTML - VERSIÓN OPTIMIZADA
+     =============================================== -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ofertas - Gansta Caps</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ofertas Especiales - Gansta Caps</title>
 
-    <link rel="stylesheet" href="css/normalize.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="css/style.css" />
-
-    <style>
-        body {
-            background-color: #000;
-        }
-    </style>
+  <!-- Preconnect para mejorar performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Fuentes optimizadas -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Estilos -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    <header class="header">
-      <div class="navegacion-principal contenedor">
-        <!-- Logo + texto animado -->
-        <div class="parte-logo">
-          <a href="index.html">
-            <img class="logo" src="img/logo.svg" alt="imagen de logo" />
-          </a>
-          <p class="parte-logo__texto">Gansta Caps</p>
-        </div>
-
-        <!-- Navegación principal -->
-        <nav class="navegacion">
-          <!-- Enlaces -->
-
-    <div class="dropdown" data-dropdown>
-      <a class="navegacion__enlace dropdown__link" href="catalogo.html">Catálogo</a>
-      <button class="dropdown__chevBtn" aria-label="Abrir categorías" aria-haspopup="true" aria-expanded="false" aria-controls="menu-catalogo"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
-      <div class="dropdown__menu" id="menu-catalogo" role="menu">
-        <a role="menuitem" class="dropdown__item" href="catalogo.html#snapback">Snapback</a>
-        <a role="menuitem" class="dropdown__item" href="catalogo.html#trucker">Trucker</a>
-        <a role="menuitem" class="dropdown__item" href="catalogo.html#fivepanel">5‑Panel</a>
-        <a role="menuitem" class="dropdown__item" href="catalogo.html#dadhat">Dad Hat</a>
-        <a role="menuitem" class="dropdown__item" href="catalogo.html#beanies">Beanies</a>
-        <a role="menuitem" class="dropdown__item" href="catalogo.html#limited">Ed. Limitadas</a>
+  <!-- HEADER RESPONSIVE -->
+  <header class="header">
+    <div class="navegacion-principal contenedor">
+      
+      <!-- Logo -->
+      <div class="parte-logo">
+        <a href="index.html">
+          <img class="logo" src="img/logo.svg" alt="Gansta Caps Logo" width="150" height="auto">
+        </a>
+        <p class="parte-logo__texto">Gansta Caps</p>
       </div>
-    </div>
-          <a class="navegacion__enlace" href="ofertas.html">Ofertas</a>
-          <a class="navegacion__enlace" href="">Gorras Premium</a>
-          <a class="navegacion__enlace" href=""></a>
 
-          <!-- Iconos sociales -->
-          <div class="iconos">
-            <div class="icono instagram">
-              <a href="https://www.instagram.com/ganstacaps/">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="35"
-                  height="35"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#fff"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-instagram"
-                >
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                  <path
-                    d="M4 8a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z"
-                  />
-                  <path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
-                  <path d="M16.5 7.5v.01" />
-                </svg>
-              </a>
-            </div>
-            <div class="icono whatsapp">
-              <a href="https://wa.me/573007274969" target="_blank">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="35"
-                  height="35"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#fff"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-whatsapp"
-                >
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                  <path
-                    d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9"
-                  />
-                  <path
-                    d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1"
-                  />
-                </svg>
-              </a>
-            </div>
+      <!-- Navegación Desktop -->
+      <nav class="navegacion navegacion-desktop">
+        <a class="navegacion__enlace" href="catalogo.html">Catálogo</a>
+        <a class="navegacion__enlace" href="ofertas.html">Ofertas</a>
+        <a class="navegacion__enlace" href="premium.html">Gorras Premium</a>
+
+        <!-- Iconos sociales -->
+        <div class="iconos">
+          <div class="icono instagram">
+            <a href="https://www.instagram.com/ganstacaps/" aria-label="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M4 8a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z"/>
+                <path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"/>
+                <path d="M16.5 7.5v.01"/>
+              </svg>
+            </a>
           </div>
-          <!-- Posible: falta cierre </div> ya existía en el código original -->
-        </nav>
-
-        <!-- Cierres originales conservados -->
-        <!-- (Se mantiene estructura tal cual sin modificar contenido) -->
-      </div>
-    </header>
-
-     <div class="banner">
-        <div class="contenido-banner">
-            <div class="informacion">
-                <h2 class="informacion__titulo">Proximamente nuestras ofertas aquí!</h2>
-            </div>
+          <div class="icono whatsapp">
+            <a href="https://wa.me/573007274969" target="_blank" aria-label="WhatsApp">
+              <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9"/>
+                <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1"/>
+              </svg>
+            </a>
+          </div>
         </div>
+      </nav>
+
+      <!-- Botón hamburguesa móvil -->
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
     </div>
 
-    <script src="js/script.js"></script>
+    <!-- Menú móvil -->
+    <nav class="navegacion-mobile" id="navegacionMobile">
+      <div class="nav-mobile-content">
+        <a href="catalogo.html" class="nav-mobile-link">Catálogo</a>
+        <a href="ofertas.html" class="nav-mobile-link">Ofertas</a>
+        <a href="premium.html" class="nav-mobile-link">Gorras Premium</a>
+        
+        <div class="nav-mobile-social">
+          <a href="https://www.instagram.com/ganstacaps/" class="social-mobile-link">Instagram</a>
+          <a href="https://wa.me/573007274969" class="social-mobile-link">WhatsApp</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- BANNER CON MENSAJE -->
+  <section class="banner ofertas-banner">
+    <div class="contenido-banner">
+      <div class="informacion">
+        <h1 class="informacion__titulo">¡Ofertas Especiales Próximamente!</h1>
+        <p class="informacion__descp">Descuentos increíbles en nuestras mejores gorras urbanas</p>
+        <a class="informacion__btn" href="catalogo.html">Ver Catálogo Completo</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN DE SUSCRIPCIÓN A OFERTAS -->
+  <main class="contenedor">
+    <section class="suscripcion-ofertas">
+      <div class="suscripcion-content">
+        <h2>Sé el primero en conocer nuestras ofertas</h2>
+        <p>Regístrate y recibe notificaciones exclusivas de descuentos y lanzamientos</p>
+        
+        <!-- Formulario simplificado para WhatsApp -->
+        <div class="suscripcion-form">
+          <p class="form-texto">Contactanos por WhatsApp para recibir ofertas exclusivas</p>
+          <a href="https://wa.me/573007274969?text=Hola! Me gustaría recibir información sobre ofertas y descuentos exclusivos" 
+             class="btn-suscribirse" target="_blank">
+            📱 Recibir Ofertas por WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRÓXIMAMENTE -->
+    <section class="proximamente">
+      <h2>¿Qué puedes esperar?</h2>
+      <div class="proximamente-grid">
+        <div class="proximamente-item">
+          <div class="proximamente-icon">🔥</div>
+          <h3>Descuentos hasta 40%</h3>
+          <p>Descuentos especiales en gorras seleccionadas</p>
+        </div>
+        <div class="proximamente-item">
+          <div class="proximamente-icon">⚡</div>
+          <h3>Flash Sales</h3>
+          <p>Ofertas relámpago por tiempo muy limitado</p>
+        </div>
+        <div class="proximamente-item">
+          <div class="proximamente-icon">🎁</div>
+          <h3>Combos Exclusivos</h3>
+          <p>Packs de 2 o 3 gorras a precios especiales</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- CARRITO FLOTANTE -->
+  <div class="carrito-flotante" id="carritoFlotante" style="display: none;">
+    <button class="carrito-indicator" id="carritoIndicator">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L6 5M9 19.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zM20.5 19.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+      </svg>
+      <span class="carrito-contador" id="carritoContador">0</span>
+      <span class="carrito-total" id="carritoTotal">$0</span>
+    </button>
+  </div>
+
+  <!-- MODAL DEL CARRITO -->
+  <div class="carrito-modal" id="carritoModal">
+    <div class="modal-overlay" id="modalOverlay"></div>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Mi Pedido</h3>
+        <button class="modal-close" id="modalClose">&times;</button>
+      </div>
+      <div class="carrito-items" id="carritoItems"></div>
+      <div class="carrito-summary">
+        <div class="carrito-summary-total">
+          <strong>Total: <span id="carritoSummaryTotal">$0</span></strong>
+        </div>
+      </div>
+      <div class="carrito-actions">
+        <button class="btn-whatsapp" id="enviarWhatsApp">📱 Enviar Pedido por WhatsApp</button>
+        <button class="btn-limpiar" id="limpiarCarrito">🗑️ Vaciar Carrito</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="header">
+      <div class="contenedor contenedor-info">
+        <div class="info">
+          <h3>Contacto</h3>
+          <p>(57) 300 727 49 69</p>
+          <h3>Correo</h3>
+          <p>ganstacaps@gmail.com</p>
+        </div>
+        <div class="iconos-footer">
+          <div class="icono instagram">
+            <a href="https://www.instagram.com/ganstacaps/" aria-label="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M4 8a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z"/>
+                <path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"/>
+                <path d="M16.5 7.5v.01"/>
+              </svg>
+            </a>
+          </div>
+          <div class="icono whatsapp">
+            <a href="https://wa.me/573007274969" target="_blank" aria-label="WhatsApp">
+              <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9"/>
+                <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1"/>
+              </svg>
+            </a>
+          </div>
+        </div>  
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="js/script.js"></script>
+  <script src="js/carrito.js"></script>
 </body>
 </html>
