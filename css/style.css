@@ -1338,7 +1338,7 @@ button {
 /* Desktop grande (1440px+) */
 @media (min-width: 1440px) {
   .catalogo-grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
   
   .hero-slider {
