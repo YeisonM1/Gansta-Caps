@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acceso - Gansta Caps</title>
+  
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Estilos existentes -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+  
+  <style>
+    /* Override del body para login */
+    body {
+      background: #ffffff;
+      min-height: 100vh;
+      font-family: var(--fuente-principal);
+    }
+
+    .auth-page {
+      min-height: calc(100vh - 80px); /* Espacio para header */
+      display: flex;
+      flex-direction: column;
+    }
+
+    .auth-main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem 2rem;
+      position: relative;
+    }
+
+    /* Decoración de fondo sutil */
+    .auth-main::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 20% 30%, rgba(250, 204, 21, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(13, 11, 9, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 40% 80%, rgba(140, 140, 139, 0.02) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .auth-container {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      border-radius: 24px;
+      padding: 3rem;
+      width: 100%;
+      max-width: 420px;
+      border: 1px solid rgba(13, 11, 9, 0.1);
+      box-shadow: 
+        0 25px 50px rgba(13, 11, 9, 0.15),
+        0 10px 25px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+      position: relative;
+      overflow: hidden;
+      z-index: 2;
+    }
+
+    .auth-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, 
+        var(--casi-negro) 0%, 
+        #FACC15 25%,
+        var(--marron) 50%, 
+        #FACC15 75%,
+        var(--casi-negro) 100%);
+      background-size: 300% 100%;
+      animation: brandFlow 4s linear infinite;
+    }
+
+    @keyframes brandFlow {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 300% 50%; }
+    }
+
+    .auth-logo {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .auth-logo h1 {
+      color: var(--casi-negro);
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      font-family: var(--fuente-titulos);
+    }
+
+    .auth-logo p {
+      color: var(--color-gris-claro);
+      font-size: 1.4rem;
+      margin: 0;
+    }
+
+    .auth-tabs {
+      display: flex;
+      background: rgba(13, 11, 9, 0.06);
+      border-radius: 16px;
+      padding: 6px;
+      margin-bottom: 2.5rem;
+      position: relative;
+    }
+
+    .auth-tab {
+      flex: 1;
+      padding: 1.4rem 1rem;
+      text-align: center;
+      color: var(--color-gris-claro);
+      font-weight: 600;
+      font-size: 1.4rem;
+      cursor: pointer;
+      border-radius: 12px;
+      transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+      position: relative;
+      z-index: 2;
+    }
+
+    .auth-tab.active {
+      color: var(--casi-negro);
+      background: linear-gradient(135deg, #FACC15 0%, #F59E0B 100%);
+      box-shadow: 
+        0 4px 15px rgba(250, 204, 21, 0.3),
+        0 2px 8px rgba(0, 0, 0, 0.1);
+      transform: scale(1.02);
+    }
+
+    .auth-content {
+      position: relative;
+      min-height: 320px;
+    }
+
+    .auth-form {
+      opacity: 0;
+      transform: translateX(100%);
+      transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      position: absolute;
+      width: 100%;
+      top: 0;
+      left: 0;
+    }
+
+    .auth-form.active {
+      opacity: 1;
+      transform: translateX(0);
+      position: relative;
+    }
+
+    .form-group {
+      margin-bottom: 2rem;
+    }
+
+    .form-group label {
+      display: block;
+      color: var(--casi-negro);
+      font-weight: 600;
+      margin-bottom: 0.8rem;
+      font-size: 1.4rem;
+    }
+
+    .form-input, .form-select {
+      width: 100%;
+      padding: 1.6rem 1.4rem;
+      border: 2px solid rgba(13, 11, 9, 0.1);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.8);
+      font-size: 1.5rem;
+      color: var(--casi-negro);
+      font-family: var(--fuente-principal);
+      transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+      box-sizing: border-box;
+    }
+
+    .form-input:focus, .form-select:focus {
+      outline: none;
+      border-color: #FACC15;
+      background: #ffffff;
+      box-shadow: 
+        0 0 0 3px rgba(250, 204, 21, 0.2),
+        0 4px 20px rgba(250, 204, 21, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .form-input::placeholder {
+      color: var(--color-gris-claro);
+      opacity: 0.8;
+    }
+
+    .form-select {
+      cursor: pointer;
+      background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%23666" stroke-width="2"><polyline points="6,9 12,15 18,9"></polyline></svg>');
+      background-repeat: no-repeat;
+      background-position: right 1.2rem center;
+      background-size: 1.4rem;
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+    }
+
+    .btn-auth {
+      width: 100%;
+      padding: 1.6rem;
+      border: none;
+      border-radius: 14px;
+      font-size: 1.6rem;
+      font-weight: 700;
+      font-family: var(--fuente-principal);
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 1rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-login {
+      background: linear-gradient(135deg, var(--casi-negro) 0%, var(--marron) 100%);
+      box-shadow: 0 8px 25px rgba(13, 11, 9, 0.3);
+    }
+
+    .btn-register {
+      background: linear-gradient(135deg, var(--marron) 0%, var(--casi-negro) 100%);
+      box-shadow: 0 8px 25px rgba(38, 33, 29, 0.3);
+    }
+
+    .btn-auth:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 35px rgba(13, 11, 9, 0.4);
+    }
+
+    .btn-auth:active {
+      transform: translateY(-2px);
+    }
+
+    /* Efecto de brillo en hover */
+    .btn-auth::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, transparent, rgba(250, 204, 21, 0.3), transparent);
+      transform: rotate(45deg) translateX(-100%);
+      transition: transform 0.6s;
+    }
+
+    .btn-auth:hover::before {
+      transform: rotate(45deg) translateX(100%);
+    }
+
+    .demo-info {
+      background: linear-gradient(135deg, 
+        rgba(250, 204, 21, 0.1) 0%, 
+        rgba(245, 158, 11, 0.05) 100%);
+      border: 1px solid rgba(250, 204, 21, 0.2);
+      border-radius: 14px;
+      padding: 1.8rem;
+      margin-bottom: 2.5rem;
+      text-align: center;
+    }
+
+    .demo-info h4 {
+      color: var(--casi-negro);
+      margin-bottom: 1.2rem;
+      font-size: 1.4rem;
+      font-weight: 600;
+    }
+
+    .demo-info p {
+      color: var(--marron);
+      margin: 0.6rem 0;
+      font-size: 1.2rem;
+      font-family: 'Courier New', monospace;
+      font-weight: 500;
+    }
+
+    .alert {
+      padding: 1.2rem 1.6rem;
+      border-radius: 12px;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      font-weight: 600;
+      animation: slideIn 0.4s ease;
+      border: 1px solid;
+    }
+
+    .alert.success {
+      background: rgba(34, 197, 94, 0.1);
+      color: #15803d;
+      border-color: rgba(34, 197, 94, 0.3);
+    }
+
+    .alert.error {
+      background: rgba(239, 68, 68, 0.1);
+      color: #dc2626;
+      border-color: rgba(239, 68, 68, 0.3);
+    }
+
+    .alert.info {
+      background: rgba(250, 204, 21, 0.1);
+      color: var(--casi-negro);
+      border-color: rgba(250, 204, 21, 0.3);
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    /* Decoración sutil con formas geométricas */
+    .floating-shapes {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .shape {
+      position: absolute;
+      border-radius: 50%;
+      animation: float 8s ease-in-out infinite;
+    }
+
+    .shape:nth-child(1) {
+      width: 60px;
+      height: 60px;
+      background: rgba(250, 204, 21, 0.05);
+      top: 15%;
+      left: 15%;
+      animation-delay: 0s;
+    }
+
+    .shape:nth-child(2) {
+      width: 80px;
+      height: 80px;
+      background: rgba(13, 11, 9, 0.03);
+      top: 70%;
+      right: 20%;
+      animation-delay: 3s;
+    }
+
+    .shape:nth-child(3) {
+      width: 100px;
+      height: 100px;
+      background: rgba(140, 140, 139, 0.02);
+      bottom: 25%;
+      left: 25%;
+      animation-delay: 6s;
+    }
+
+    @keyframes float {
+      0%, 100% { 
+        transform: translateY(0px) rotate(0deg); 
+        opacity: 0.3;
+      }
+      33% { 
+        transform: translateY(-20px) rotate(120deg); 
+        opacity: 0.1;
+      }
+      66% { 
+        transform: translateY(15px) rotate(240deg); 
+        opacity: 0.2;
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 480px) {
+      .auth-main {
+        padding: 2rem 1rem;
+      }
+
+      .auth-container {
+        margin: 0 1rem;
+        padding: 2.5rem 2rem;
+      }
+
+      .auth-logo h1 {
+        font-size: 2.4rem;
+      }
+
+      .demo-info p {
+        font-size: 1.1rem;
+      }
+
+      .auth-content {
+        min-height: 280px;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .auth-container {
+        padding: 4rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Formas flotantes decorativas sutiles -->
+  <div class="floating-shapes">
+    <div class="shape"></div>
+    <div class="shape"></div>
+    <div class="shape"></div>
+  </div>
+
+  <div class="auth-page">
+    <!-- Header COMPLETO normal de tu sitio -->
+    <header class="header">
+      <div class="navegacion-principal contenedor">
+        
+        <!-- Logo -->
+        <div class="parte-logo">
+          <a href="index.html">
+            <img class="logo" src="img/logo.svg" alt="Gansta Caps Logo" width="150" height="auto">
+          </a>
+          <p class="parte-logo__texto">Gansta Caps</p>
+        </div>
+
+        <!-- Navegación Desktop -->
+        <nav class="navegacion navegacion-desktop">
+          <a class="navegacion__enlace" href="catalogo.html">Catálogo</a>
+          <a class="navegacion__enlace" href="ofertas.html">Ofertas</a>
+          <a class="navegacion__enlace" href="premium.html">Gorras Premium</a>
+
+          <!-- Iconos sociales -->
+          <div class="iconos">
+            <div class="icono instagram">
+              <a href="https://www.instagram.com/ganstacaps/" aria-label="Instagram">
+                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                  <path d="M4 8a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z"/>
+                  <path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"/>
+                  <path d="M16.5 7.5v.01"/>
+                </svg>
+              </a>
+            </div>
+            <div class="icono whatsapp">
+              <a href="https://wa.me/573007274969" target="_blank" aria-label="WhatsApp">
+                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                  <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9"/>
+                  <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </nav>
+
+        <!-- Botón hamburguesa móvil -->
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+
+      <!-- Menú móvil -->
+      <nav class="navegacion-mobile" id="navegacionMobile">
+        <div class="nav-mobile-content">
+          <a href="catalogo.html" class="nav-mobile-link">Catálogo</a>
+          <a href="ofertas.html" class="nav-mobile-link">Ofertas</a>
+          <a href="premium.html" class="nav-mobile-link">Gorras Premium</a>
+          
+          <div class="nav-mobile-social">
+            <a href="https://www.instagram.com/ganstacaps/" class="social-mobile-link">Instagram</a>
+            <a href="https://wa.me/573007274969" class="social-mobile-link">WhatsApp</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="auth-main">
+      <div class="auth-container">
+        
+        <!-- Logo y título -->
+        <div class="auth-logo">
+          <h1>Gansta Caps</h1>
+          <p>Acceso exclusivo para miembros</p>
+        </div>
+
+        <!-- Información de prueba -->
+        <div class="demo-info">
+          <h4>🎓 Cuentas de prueba (académico)</h4>
+          <p><strong>Admin:</strong> admin@gansta.com / admin123</p>
+          <p><strong>Cliente:</strong> cliente@test.com / cliente123</p>
+        </div>
+
+        <!-- Tabs para cambiar entre login/register -->
+        <div class="auth-tabs">
+          <div class="auth-tab active" id="loginTab">Iniciar Sesión</div>
+          <div class="auth-tab" id="registerTab">Crear Cuenta</div>
+        </div>
+
+        <!-- Alertas -->
+        <div id="alertContainer"></div>
+
+        <!-- Contenedor de formularios -->
+        <div class="auth-content">
+          
+          <!-- FORMULARIO DE LOGIN -->
+          <form id="loginForm" class="auth-form active">
+            <div class="form-group">
+              <label for="loginEmail">Email</label>
+              <input type="email" id="loginEmail" class="form-input" placeholder="tu@email.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="loginPassword">Contraseña</label>
+              <input type="password" id="loginPassword" class="form-input" placeholder="Tu contraseña" required>
+            </div>
+
+            <button type="submit" class="btn-auth btn-login">Iniciar Sesión</button>
+          </form>
+
+          <!-- FORMULARIO DE REGISTRO -->
+          <form id="registerForm" class="auth-form">
+            <div class="form-group">
+              <label for="registerName">Nombre completo</label>
+              <input type="text" id="registerName" class="form-input" placeholder="Tu nombre completo" required>
+            </div>
+
+            <div class="form-group">
+              <label for="registerEmail">Email</label>
+              <input type="email" id="registerEmail" class="form-input" placeholder="tu@email.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="registerPassword">Contraseña</label>
+              <input type="password" id="registerPassword" class="form-input" placeholder="Mínimo 6 caracteres" required minlength="6">
+            </div>
+
+            <div class="form-group">
+              <label for="registerRole">Tipo de cuenta</label>
+              <select id="registerRole" class="form-select" required>
+                <option value="">Selecciona tu rol...</option>
+                <option value="cliente">🛒 Cliente</option>
+                <option value="admin">👨‍💼 Administrador</option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn-auth btn-register">Crear Cuenta</button>
+          </form>
+
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="header">
+        <div class="contenedor contenedor-info">
+          <div class="info">
+            <h3>Contacto</h3>
+            <p>(57) 300 727 49 69</p>
+            <h3>Correo</h3>
+            <p>ganstacaps@gmail.com</p>
+          </div>
+          <div class="iconos-footer">
+            <div class="icono instagram">
+              <a href="https://www.instagram.com/ganstacaps/" aria-label="Instagram">
+                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                  <path d="M4 8a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z"/>
+                  <path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"/>
+                  <path d="M16.5 7.5v.01"/>
+                </svg>
+              </a>
+            </div>
+            <div class="icono whatsapp">
+              <a href="https://wa.me/573007274969" target="_blank" aria-label="WhatsApp">
+                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                  <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9"/>
+                  <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1"/>
+                </svg>
+              </a>
+            </div>
+          </div>  
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/script.js"></script>
+  
+  <script>
+    // Cambiar entre tabs
+    const loginTab = document.getElementById('loginTab');
+    const registerTab = document.getElementById('registerTab');
+    const loginForm = document.getElementById('loginForm');
+    const registerForm = document.getElementById('registerForm');
+
+    loginTab.addEventListener('click', () => {
+      loginTab.classList.add('active');
+      registerTab.classList.remove('active');
+      loginForm.classList.add('active');
+      registerForm.classList.remove('active');
+    });
+
+    registerTab.addEventListener('click', () => {
+      registerTab.classList.add('active');
+      loginTab.classList.remove('active');
+      registerForm.classList.add('active');
+      loginForm.classList.remove('active');
+    });
+
+    // Mostrar alertas
+    function showAlert(message, type = 'info') {
+      const alertContainer = document.getElementById('alertContainer');
+      const alert = document.createElement('div');
+      alert.className = `alert ${type}`;
+      alert.textContent = message;
+      
+      alertContainer.innerHTML = '';
+      alertContainer.appendChild(alert);
+      
+      setTimeout(() => {
+        alert.remove();
+      }, 4000);
+    }
+
+    // Manejo de formularios básico
+    loginForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const email = document.getElementById('loginEmail').value;
+      const password = document.getElementById('loginPassword').value;
+      
+      showAlert(`✅ Login intentado: ${email}`, 'success');
+      console.log('Login:', email, password);
+    });
+
+    registerForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('registerName').value;
+      const email = document.getElementById('registerEmail').value;
+      const password = document.getElementById('registerPassword').value;
+      const role = document.getElementById('registerRole').value;
+      
+      showAlert(`🎉 Cuenta creada: ${name} como ${role}`, 'info');
+      console.log('Register:', name, email, password, role);
+    });
+  </script>
+</body>
+</html>
