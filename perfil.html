@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Perfil - Gansta Caps</title>
+
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Estilos -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+  
+  <style>
+    body {
+      background: #f8f9fa;
+    }
+
+    .perfil-main {
+      padding: 4rem 0;
+      min-height: calc(100vh - 200px);
+    }
+
+    .perfil-container {
+      max-width: 80rem;
+      margin: 0 auto;
+      display: grid;
+      gap: 3rem;
+      grid-template-columns: 1fr;
+    }
+
+    .perfil-header {
+      background: white;
+      border-radius: 20px;
+      padding: 3rem;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+      border: 1px solid rgba(0,0,0,0.05);
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .perfil-header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #FACC15, #F59E0B, #FACC15);
+    }
+
+    .perfil-avatar {
+      width: 100px;
+      height: 100px;
+      background: linear-gradient(135deg, #FACC15, #F59E0B);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--casi-negro);
+      font-family: var(--fuente-titulos);
+      flex-shrink: 0;
+      box-shadow: 0 8px 20px rgba(250, 204, 21, 0.3);
+    }
+
+    .perfil-info {
+      flex: 1;
+    }
+
+    .perfil-info h1 {
+      color: var(--casi-negro);
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      font-family: var(--fuente-titulos);
+    }
+
+    .perfil-email {
+      color: var(--color-gris-claro);
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+    }
+
+    .perfil-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--casi-negro);
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 20px;
+      font-size: 1.3rem;
+      font-weight: 600;
+      text-transform: capitalize;
+    }
+
+    .perfil-badge.admin {
+      background: linear-gradient(135deg, #ef4444, #dc2626);
+    }
+
+    .perfil-badge.cliente {
+      background: linear-gradient(135deg, #22c55e, #16a34a);
+    }
+
+    .perfil-content {
+      display: grid;
+      gap: 3rem;
+      grid-template-columns: 1fr;
+    }
+
+    .perfil-card {
+      background: white;
+      border-radius: 16px;
+      padding: 2.5rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .card-title {
+      color: var(--casi-negro);
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-family: var(--fuente-titulos);
+    }
+
+    .card-title svg {
+      stroke: #FACC15;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 2rem;
+    }
+
+    .stat-item {
+      text-align: center;
+      padding: 2rem;
+      background: #f8f9fa;
+      border-radius: 12px;
+      border: 1px solid rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+    }
+
+    .stat-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    .stat-number {
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: #FACC15;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .stat-label {
+      color: var(--color-gris-claro);
+      font-size: 1.3rem;
+      font-weight: 500;
+    }
+
+    .info-grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .info-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem;
+      background: #f8f9fa;
+      border-radius: 10px;
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .info-label {
+      color: var(--casi-negro);
+      font-weight: 600;
+      font-size: 1.4rem;
+    }
+
+    .info-value {
+      color: var(--color-gris-claro);
+      font-size: 1.4rem;
+    }
+
+    .actions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .action-btn {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.5rem;
+      background: transparent;
+      border: 2px solid rgba(13, 11, 9, 0.1);
+      border-radius: 12px;
+      color: var(--casi-negro);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.4rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      justify-content: center;
+      font-family: inherit;
+    }
+
+    .action-btn:hover {
+      background: var(--casi-negro);
+      color: white;
+      border-color: var(--casi-negro);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(13, 11, 9, 0.2);
+    }
+
+    .action-btn.primary {
+      background: linear-gradient(135deg, #FACC15, #F59E0B);
+      border-color: #FACC15;
+      color: var(--casi-negro);
+    }
+
+    .action-btn.primary:hover {
+      background: linear-gradient(135deg, #F59E0B, #FACC15);
+      color: var(--casi-negro);
+      border-color: #F59E0B;
+    }
+
+    .action-btn.danger {
+      border-color: rgba(239, 68, 68, 0.3);
+      color: #ef4444;
+    }
+
+    .action-btn.danger:hover {
+      background: #ef4444;
+      color: white;
+      border-color: #ef4444;
+    }
+
+    .loading-state {
+      text-align: center;
+      padding: 4rem;
+      color: var(--color-gris-claro);
+    }
+
+    .loading-spinner {
+      width: 40px;
+      height: 40px;
+      border: 3px solid #f3f3f3;
+      border-top: 3px solid #FACC15;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 1rem auto;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .perfil-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+      }
+
+      .perfil-avatar {
+        width: 80px;
+        height: 80px;
+        font-size: 2.4rem;
+      }
+
+      .perfil-info h1 {
+        font-size: 2.4rem;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .actions-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .perfil-content {
+        grid-template-columns: 2fr 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header normal -->
+  <header class="header">
+    <div class="navegacion-principal contenedor">
+      
+      <!-- Logo -->
+      <div class="parte-logo">
+        <a href="index.html">
+          <img class="logo" src="img/logo.svg" alt="Gansta Caps Logo" width="150" height="auto">
+        </a>
+        <p class="parte-logo__texto">Gansta Caps</p>
+      </div>
+
+      <!-- Navegación Desktop -->
+      <nav class="navegacion navegacion-desktop">
+        <a class="navegacion__enlace" href="catalogo.html">Catálogo</a>
+        <a class="navegacion__enlace" href="ofertas.html">Ofertas</a>
+        <a class="navegacion__enlace" href="premium.html">Gorras Premium</a>
+
+        <!-- Iconos sociales -->
+        <div class="iconos">
+          <div class="icono instagram">
+            <a href="https://www.instagram.com/ganstacaps/" aria-label="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M4 8a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z"/>
+                <path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"/>
+                <path d="M16.5 7.5v.01"/>
+              </svg>
+            </a>
+          </div>
+          <div class="icono whatsapp">
+            <a href="https://wa.me/573007274969" target="_blank" aria-label="WhatsApp">
+              <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9"/>
+                <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Botón hamburguesa móvil -->
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+
+    <!-- Menú móvil -->
+    <nav class="navegacion-mobile" id="navegacionMobile">
+      <div class="nav-mobile-content">
+        <a href="catalogo.html" class="nav-mobile-link">Catálogo</a>
+        <a href="ofertas.html" class="nav-mobile-link">Ofertas</a>
+        <a href="premium.html" class="nav-mobile-link">Gorras Premium</a>
+        
+        <div class="nav-mobile-social">
+          <a href="https://www.instagram.com/ganstacaps/" class="social-mobile-link">Instagram</a>
+          <a href="https://wa.me/573007274969" class="social-mobile-link">WhatsApp</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main content -->
+  <main class="perfil-main">
+    <div class="contenedor">
+      
+      <!-- Estado de carga -->
+      <div id="loadingState" class="loading-state">
+        <div class="loading-spinner"></div>
+        <p>Cargando perfil...</p>
+      </div>
+
+      <!-- Contenido del perfil -->
+      <div id="perfilContent" class="perfil-container" style="display: none;">
+        
+        <!-- Header del perfil -->
+        <div class="perfil-header">
+          <div class="perfil-avatar" id="perfilAvatar">U</div>
+          <div class="perfil-info">
+            <h1 id="perfilNombre">Cargando...</h1>
+            <p class="perfil-email" id="perfilEmail">cargando@email.com</p>
+            <div class="perfil-badge" id="perfilBadge">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+              <span id="perfilRol">Usuario</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contenido principal -->
+        <div class="perfil-content">
+          
+          <!-- Columna principal -->
+          <div>
+            
+            <!-- Estadísticas -->
+            <div class="perfil-card">
+              <h2 class="card-title">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="16" y1="2" x2="16" y2="6"></line>
+                  <line x1="8" y1="2" x2="8" y2="6"></line>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+                Mi Actividad
+              </h2>
+              
+              <div class="stats-grid">
+                <div class="stat-item">
+                  <span class="stat-number">0</span>
+                  <span class="stat-label">Pedidos Realizados</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-number">0</span>
+                  <span class="stat-label">Productos Favoritos</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-number">0</span>
+                  <span class="stat-label">Puntos Acumulados</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Información de la cuenta -->
+            <div class="perfil-card">
+              <h2 class="card-title">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+                Información de la Cuenta
+              </h2>
+              
+              <div class="info-grid">
+                <div class="info-item">
+                  <span class="info-label">Nombre completo</span>
+                  <span class="info-value" id="infoNombre">-</span>
+                </div>
+                <div class="info-item">
+                  <span class="info-label">Email</span>
+                  <span class="info-value" id="infoEmail">-</span>
+                </div>
+                <div class="info-item">
+                  <span class="info-label">Tipo de cuenta</span>
+                  <span class="info-value" id="infoRol">-</span>
+                </div>
+                <div class="info-item">
+                  <span class="info-label">Miembro desde</span>
+                  <span class="info-value" id="infoFecha">-</span>
+                </div>
+                <div class="info-item">
+                  <span class="info-label">Último acceso</span>
+                  <span class="info-value" id="infoUltimoAcceso">-</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sidebar con acciones -->
+          <div>
+            <div class="perfil-card">
+              <h2 class="card-title">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="3"></circle>
+                  <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1 1.51V6a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V12a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                </svg>
+                Acciones Rápidas
+              </h2>
+              
+              <div class="actions-grid">
+                <a href="catalogo.html" class="action-btn primary">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L6 5M9 19.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zM20.5 19.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+                  </svg>
+                  Ver Catálogo
+                </a>
+                
+                <a href="mis-pedidos.html" class="action-btn">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                    <line x1="8" y1="21" x2="16" y2="21"></line>
+                    <line x1="12" y1="17" x2="12" y2="21"></line>
+                  </svg>
+                  Mis Pedidos
+                </a>
+                
+                <div class="action-btn admin-only" id="adminAction" style="display: none;">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                    <circle cx="9" cy="9" r="2"></circle>
+                    <path d="M21 15.5c-1-1.5-3-2.5-5-2.5s-4 1-5 2.5"></path>
+                  </svg>
+                  Panel Admin
+                </div>
+                
+                <button class="action-btn danger" onclick="cerrarSesion()">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                    <polyline points="16,17 21,12 16,7"></polyline>
+                    <line x1="21" y1="12" x2="9" y2="12"></line>
+                  </svg>
+                  Cerrar Sesión
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Estado sin autenticación -->
+      <div id="noAuthState" class="loading-state" style="display: none;">
+        <h2>🔒 Acceso Requerido</h2>
+        <p>Debes iniciar sesión para ver tu perfil</p>
+        <a href="login.html" class="action-btn primary" style="display: inline-flex; margin-top: 2rem;">
+          Iniciar Sesión
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="header">
+      <div class="contenedor contenedor-info">
+        <div class="info">
+          <h3>Contacto</h3>
+          <p>(57) 300 727 49 69</p>
+          <h3>Correo</h3>
+          <p>ganstacaps@gmail.com</p>
+        </div>
+        <div class="iconos-footer">
+          <div class="icono instagram">
+            <a href="https://www.instagram.com/ganstacaps/" aria-label="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M4 8a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z"/>
+                <path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"/>
+                <path d="M16.5 7.5v.01"/>
+              </svg>
+            </a>
+          </div>
+          <div class="icono whatsapp">
+            <a href="https://wa.me/573007274969" target="_blank" aria-label="WhatsApp">
+              <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9"/>
+                <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1"/>
+              </svg>
+            </a>
+          </div>
+        </div>  
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/script.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/header-auth.js"></script>
+  <script src="js/page-protection.js"></script>
+  
+  <script>
+// Versión optimizada sin lag
+document.addEventListener('DOMContentLoaded', function() {
+  loadUserProfile(); // Sin delay
+});
+
+function loadUserProfile() {
+  const loadingState = document.getElementById('loadingState');
+  const perfilContent = document.getElementById('perfilContent');
+  const noAuthState = document.getElementById('noAuthState');
+  
+  // Función que verifica el usuario inmediatamente
+  function checkUser() {
+    let currentUser = null;
+    
+    // Intentar obtener usuario de AuthSystem
+    if (typeof window.AuthSystem !== 'undefined') {
+      currentUser = window.AuthSystem.getCurrentUser();
+    }
+    
+    // Fallback directo al localStorage si AuthSystem no está listo
+    if (!currentUser) {
+      try {
+        const storedUser = localStorage.getItem('gansta_caps_current_user');
+        currentUser = storedUser ? JSON.parse(storedUser) : null;
+      } catch (error) {
+        console.error('Error obteniendo usuario:', error);
+      }
+    }
+    
+    return currentUser;
+  }
+  
+  const currentUser = checkUser();
+
+  if (!currentUser) {
+    // No hay usuario logueado - mostrar inmediatamente
+    loadingState.style.display = 'none';
+    noAuthState.style.display = 'block';
+    return;
+  }
+
+  // Cargar información del usuario inmediatamente
+  populateUserInfo(currentUser);
+  
+  // Mostrar contenido sin delay
+  loadingState.style.display = 'none';
+  perfilContent.style.display = 'block';
+}
+
+// Resto del código igual...
+function populateUserInfo(user) {
+  const firstName = getFirstName(user.name);
+  const userInitial = firstName.charAt(0).toUpperCase();
+  
+  // Header del perfil
+  document.getElementById('perfilAvatar').textContent = userInitial;
+  document.getElementById('perfilNombre').textContent = user.name;
+  document.getElementById('perfilEmail').textContent = user.email;
+  
+  // Badge de rol
+  const badge = document.getElementById('perfilBadge');
+  const rolElement = document.getElementById('perfilRol');
+  
+  if (user.role === 'admin') {
+    badge.className = 'perfil-badge admin';
+    rolElement.textContent = 'Administrador';
+  } else {
+    badge.className = 'perfil-badge cliente';
+    rolElement.textContent = 'Cliente';
+  }
+  
+  // Información de la cuenta
+  document.getElementById('infoNombre').textContent = user.name;
+  document.getElementById('infoEmail').textContent = user.email;
+  document.getElementById('infoRol').textContent = user.role === 'admin' ? 'Administrador' : 'Cliente';
+  
+  // Fecha de creación
+  if (user.createdAt) {
+    const fechaCreacion = new Date(user.createdAt).toLocaleDateString('es-ES', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    });
+    document.getElementById('infoFecha').textContent = fechaCreacion;
+  }
+  
+  // Último acceso
+  if (user.lastLogin) {
+    const ultimoAcceso = new Date(user.lastLogin).toLocaleDateString('es-ES', {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit'
+    });
+    document.getElementById('infoUltimoAcceso').textContent = ultimoAcceso;
+  } else {
+    document.getElementById('infoUltimoAcceso').textContent = 'Primera vez';
+  }
+  
+  // Mostrar botón admin si es admin
+  if (user.role === 'admin') {
+    const adminAction = document.getElementById('adminAction');
+    adminAction.style.display = 'flex';
+    adminAction.onclick = () => window.location.href = 'admin.html';
+  }
+}
+
+function getFirstName(fullName) {
+  if (!fullName) return 'Usuario';
+  return fullName.trim().split(' ')[0];
+}
+
+function cerrarSesion() {
+  const confirmar = confirm('¿Estás seguro de que quieres cerrar sesión?');
+  
+  if (confirmar) {
+    if (typeof window.AuthSystem !== 'undefined') {
+      window.AuthSystem.logout();
+    } else {
+      localStorage.removeItem('gansta_caps_current_user');
+      window.location.href = 'login.html';
+    }
+  }
+}
+</script>
+</body>
+</html>
